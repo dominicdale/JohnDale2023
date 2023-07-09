@@ -17,7 +17,7 @@
 
 <body class="overflow-hidden">
     <nav class="nav fixed top-10 left-10 z-30 flex items-center gap-6 pt-4 pb-4 pr-8">
-        <span class="nav__toggle bg-white w-10 h-10 flex items-center justify-center select-none cursor-pointer">Icon</span>
+        <button onclick="openNav()" class="nav__toggle bg-white w-10 h-10 flex items-center justify-center select-none cursor-pointer">Icon</button>
 
         <button onclick="home()" class="nav__link ease-in-out duration-300">Home</button>
         <button onclick="gallery()" class="nav__link ease-in-out duration-300">Gallery</button>
@@ -89,7 +89,7 @@
         </section>
 
         <section class="panel panel--overlay w-screen h-screen absolute bg-slate-400 -translate-x-full ease-in-out duration-1000 p-10 pt-32 z-20 overflow-y-auto">
-            <button class="overlay__close absolute top-6 right-6" aria-label="Close Overlay">close</button>
+            <button onclick="closeOverlay()" class="overlay__close absolute top-6 right-6" aria-label="Close Overlay">close</button>
             <img src="" class="overlay__img" width="0" height="0" alt=""/>
             <div class="overlay__content flex flex--column flex--align-center">
                 <h2 class="overlay__title"></h2>
