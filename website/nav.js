@@ -15,3 +15,8 @@ navLink.forEach(function(e) {
         console.log(target)
     })
 })
+
+function closeNav() {
+    nav.classList.remove('nav--open')
+    main.classList.remove('blur-3xl')
+}
