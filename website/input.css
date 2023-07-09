@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.grid__item--hide {
+    pointer-events: none;
+    display: none;
+    opacity: 0;
+}
+
+.grid__item--active {
+    animation: fadeIn .7s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav__link:not(.nav--open .nav__link) {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.nav:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #FFF;
+    transform: scaleX(0);
+    transform-origin: left;
+    z-index: -1;
+    transition: ease-in-out .3s;
+}
+
+.nav--open:before {
+    transform: scaleX(1);
+}
