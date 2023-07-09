@@ -40,7 +40,7 @@ function populateOverlay(e) {
 
     overlay_framed.innerText = framed
     overlay_open.setAttribute('href', img)
-    contact_message.innerHTML = "Enquiring about " + title
+    // contact_message.innerHTML = "Enquiring about " + title
 
     // Once image loaded, open overlay
     // overlay_img.onload = function() {

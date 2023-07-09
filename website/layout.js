@@ -16,7 +16,7 @@ function gallery() {
     closeNav()
     closeContact()
     closeOverlay()
-    introPanel.classList.add('scale-75')
+    introScale()
     galleryPanel.classList.remove('translate-x-full')
 }
 
@@ -28,7 +28,7 @@ function contact() {
     closeNav()
     closeGallery()
     closeOverlay()
-    introPanel.classList.add('scale-75')
+    introScale()
     contactPanel.classList.remove('translate-y-full')
 }
 
@@ -45,4 +45,8 @@ function overlay() {
 function closeOverlay() {
     overlayPanel.classList.add('-translate-x-full')
     galleryPanel.classList.remove('scale-75')
+}
+
+function introScale() {
+    introPanel.classList.add('scale-75')
 }
