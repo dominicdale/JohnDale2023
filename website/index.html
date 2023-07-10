@@ -12,26 +12,34 @@
     <link href="/output.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 </head>
 
 <body class="overflow-hidden">
-    <nav class="nav fixed top-10 left-10 z-30 flex items-center gap-6 pt-4 pb-4 pr-8">
-        <button onclick="openNav()" class="nav__toggle bg-white w-10 h-10 flex items-center justify-center select-none cursor-pointer">Icon</button>
+    <nav class="nav fixed top-10 left-10 z-30 flex items-center gap-3">
+        <button onclick="openNav()" class="nav__toggle bg-white w-10 h-10 flex flex-col gap-1 items-center justify-center select-none cursor-pointer" tabindex="1">
+            <span class="nav__line nav__line--t block w-4 h-[0.15rem] bg-black relative ease-in-out duration-300"></span>
+            <span class="nav__line nav__line--b block w-4 h-[0.15rem] bg-black relative ease-in-out duration-300"></span>
+        </button>
 
-        <button onclick="home()" class="nav__link ease-in-out duration-300">Home</button>
-        <button onclick="gallery()" class="nav__link ease-in-out duration-300">Gallery</button>
-        <button onclick="contact()" class="nav__link ease-in-out duration-300">Contact</button>
+        <div class="flex gap-6">
+            <button onclick="home()" class="nav__link ease-in-out duration-300 text-sm font">Home</button>
+            <button onclick="gallery()" class="nav__link ease-in-out duration-300 text-sm">Gallery</button>
+            <button onclick="contact()" class="nav__link ease-in-out duration-300 text-sm">Contact</button>
+        </div>
     </nav>
 
     <main class="w-screen h-screen relative ease-in-out duration-700">
         <section class="panel panel--intro w-screen h-screen absolute inset-0 flex flex-col items-center justify-center bg-slate-50 ease-in-out duration-1000">
             <img src="/img/bg.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
-            <div class="absolute bottom-10 left-10 bg-white p-10 z-10 text-center max-w-[35rem]">
-                <h1 class="text-[6rem]">John Dale</h1>
-                <p>Lorem ipsum dolor sit amet, reprehenderit occaecat cillum anim reprehenderit reprehenderit reprehenderit do id voluptate culpa velit sunt. Est sit velit aliquip aliquip do pariatur eiusmod enim laborum occaecat laboris elit consequat.</p>
-                <button onclick="gallery()">Go to gallery</button>
-                <button onclick="contact()">Contact</button>
+            <div class="absolute bottom-10 left-10 bg-white p-10 z-10 max-w-xl text-left flex flex-col gap-7 rounded-br-[3.75rem] shadow-2xl">
+                <h1 class="text-6xl tracking-tight font-bold font-serif">John Dale</h1>
+                <p class="leading-7">Lorem ipsum dolor sit amet, reprehenderit occaecat cillum anim reprehenderit reprehenderit reprehenderit do id voluptate culpa velit sunt. Est sit velit aliquip aliquip do pariatur eiusmod enim laborum occaecat laboris elit consequat.</p>
+                <div class="flex gap-4">
+                    <button onclick="gallery()" class="bg-gray-100 px-8 py-4 rounded-lg hover:bg-gray-900 hover:text-white ease-in-out duration-300">Go to gallery</button>
+                    <button onclick="contact()">Contact</button>
+                </div>
             </div>
         </section>
 
@@ -40,21 +48,22 @@
         </section>
 
         <section class="panel panel--gallery w-screen h-screen absolute inset-0 bg-slate-300 translate-x-full ease-in-out duration-1000 p-10 pt-32 z-20 overflow-y-auto">
-            <h1 class="text-8xl">Gallery</h1>
-            <nav class="gallery__filters flex flex--wrap">
-                <a class="gallery__filter gallery__filter--active" data-filter="all">All</a>
-                <a class="gallery__filter" data-filter="abstract">Abstract</a>
-                <a class="gallery__filter" data-filter="collage">Collage</a>
-                <a class="gallery__filter" data-filter="landscapes">Landscapes</a>
-                <a class="gallery__filter" data-filter="lockdown">Lockdown</a>
-                <a class="gallery__filter" data-filter="oilPastels">Oil Pastels</a>
-                <a class="gallery__filter" data-filter="photos">Photos</a>
-                <a class="gallery__filter" data-filter="plasterPaintings">Plaster Paintings</a>
-                <a class="gallery__filter" data-filter="stAbbs">St. Abbs</a>
-                <a class="gallery__filter" data-filter="stillLife">Still Life</a>
-                <a class="gallery__filter" data-filter="italy">Italy</a>
-                <a class="gallery__filter" data-filter="20221230150147">20221230 150147</a>
-            </nav>
+            <div class="flex flex-col gap-4">
+                <h1 class="text-9xl font-serif">Gallery</h1>
+                <nav class="gallery__filters flex flex-wrap gap-2 max-w-3xl">
+                    <a class="gallery__filter gallery__filter--active text-3xl font-serif cursor-pointer relative" data-filter="all">All</a>
+                    <a class="gallery__filter text-3xl font-serif cursor-pointer relative" data-filter="abstract">Abstract</a>
+                    <a class="gallery__filter text-3xl font-serif cursor-pointer relative" data-filter="collage">Collage</a>
+                    <a class="gallery__filter text-3xl font-serif cursor-pointer relative" data-filter="landscapes">Landscapes</a>
+                    <a class="gallery__filter text-3xl font-serif cursor-pointer relative" data-filter="lockdown">Lockdown</a>
+                    <a class="gallery__filter text-3xl font-serif cursor-pointer relative" data-filter="oilPastels">Oil Pastels</a>
+                    <a class="gallery__filter text-3xl font-serif cursor-pointer relative" data-filter="photos">Photos</a>
+                    <a class="gallery__filter text-3xl font-serif cursor-pointer relative" data-filter="plasterPaintings">Plaster Paintings</a>
+                    <a class="gallery__filter text-3xl font-serif cursor-pointer relative" data-filter="stAbbs">St. Abbs</a>
+                    <a class="gallery__filter text-3xl font-serif cursor-pointer relative" data-filter="stillLife">Still Life</a>
+                    <a class="gallery__filter text-3xl font-serif cursor-pointer relative" data-filter="italy">Italy</a>
+                </nav>
+            </div>
 
             <div class="columns-3 gap-5">
                 <div class="grid__item inline-flex w-full mt-[1.25rem]" data-id="abstract" data-img-crop="/media/oxgerncy/black-boats.jpg?width=1000" data-img="/media/oxgerncy/black-boats.jpg" data-title="Black Boats" data-description="Acrylic on cardboard" data-price="50" data-imgwidth="4928" data-imgheight="3264" data-width="20" data-height="21" data-framed="Not Framed">
@@ -65,36 +74,32 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid__item inline-flex w-full mt-[1.25rem]" data-id="collage" data-img-crop="/media/fesjirrr/black-on-white.jpg?width=1000" data-img="/media/fesjirrr/black-on-white.jpg" data-title="Black On White" data-description="Acrylic on canvas" data-price="0" data-imgwidth="3536" data-imgheight="2832" data-width="0" data-height="0" data-framed="Not Framed">
+                <div class="grid__item inline-flex w-full mt-[1.25rem]" data-id="collage" data-img-crop="/img/bg.jpg" data-img="/img/bg.jpg" data-title="Black On White" data-description="Acrylic on canvas" data-price="0" data-imgwidth="3536" data-imgheight="2832" data-width="0" data-height="0" data-framed="Not Framed">
                     <div class="card relative">
-                        
                         <img alt="Black On White" height="2832" width="3536" class="card__image block w-full h-auto" loading="lazy" src="/img/bg.jpg">
                         <div class="card__body absolute left-4 bottom-4 p-4 bg-white">
                             <h2 class="card__title">Collage</h2>
-                            
                         </div>
                     </div>
                 </div>
                 <div class="grid__item inline-flex w-full mt-[1.25rem]" data-id="landscapes" data-img-crop="/media/kurjicar/black-stripes.jpg?width=1000" data-img="/media/kurjicar/black-stripes.jpg" data-title="Black Stripes" data-description="Acrylic on canvas" data-price="175" data-imgwidth="4928" data-imgheight="3264" data-width="70" data-height="50" data-framed="Not Framed">
                     <div class="card relative">
-                        
                         <img alt="Black Stripes" height="3264" width="4928" class="card__image block w-full h-auto" loading="lazy" src="/img/bg.jpg">
                         <div class="card__body absolute left-4 bottom-4 p-4 bg-white">
                             <h2 class="card__title">Landscapes</h2>
-                            
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="panel panel--overlay w-screen h-screen absolute bg-slate-400 -translate-x-full ease-in-out duration-1000 p-10 pt-32 z-20 overflow-y-auto">
+        <section class="panel panel--overlay w-screen h-screen absolute bg-slate-400 -translate-x-full ease-in-out duration-1000 p-10 pt-32 z-20 overflow-y-auto flex flex-col items-center justify-center gap-6">
             <button onclick="closeOverlay()" class="overlay__close absolute top-6 right-6" aria-label="Close Overlay">close</button>
-            <img src="" class="overlay__img h-auto" width="0" height="0" alt=""/>
-            <div class="overlay__content flex flex--column flex--align-center">
+            <img src="" class="overlay__img h-auto max-w-2xl" width="0" height="0" alt=""/>
+            <div class="overlay__content flex flex-col max-w-2xl">
                 <h2 class="overlay__title"></h2>
                 <p class="overlay__description"></p>
-                <div class="overlay__info flex flex--justify-center">
+                <div class="overlay__info flex gap-4">
                     <span class="overlay__width"></span>
                     <span class="overlay__height"></span>
                     <span class="overlay__framed"></span>

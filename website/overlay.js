@@ -11,15 +11,15 @@ const overlay_close = document.querySelector('.overlay__close')
 
 function populateOverlay(e) {
     var img = e.getAttribute('data-img'),
-    img_crop = e.getAttribute('data-img-crop'),
-    title = e.getAttribute('data-title'),
-    price = e.getAttribute('data-price'),
-    framed = e.getAttribute('data-framed'),
-    description = e.getAttribute('data-description'),
-    imgWidth = e.getAttribute('data-imgWidth'),
-    imgHeight = e.getAttribute('data-imgHeight'),
-    width = e.getAttribute('data-width'),
-    height = e.getAttribute('data-height')
+        img_crop = e.getAttribute('data-img-crop'),
+        title = e.getAttribute('data-title'),
+        price = e.getAttribute('data-price'),
+        framed = e.getAttribute('data-framed'),
+        description = e.getAttribute('data-description'),
+        imgWidth = e.getAttribute('data-imgWidth'),
+        imgHeight = e.getAttribute('data-imgHeight'),
+        width = e.getAttribute('data-width'),
+        height = e.getAttribute('data-height')
 
     overlay_img.setAttribute('src', img_crop)
     overlay_img.setAttribute('alt', title)

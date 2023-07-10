@@ -12,3 +12,8 @@ function closeNav() {
     main.classList.remove('blur-3xl')
 }
 
+document.addEventListener('click', function(e) {
+    if (!nav.contains(e.target)) {
+        closeNav()
+    }
+})
