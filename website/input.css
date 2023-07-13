@@ -40,7 +40,7 @@
     transform: scaleX(0);
     transform-origin: left;
     z-index: -1;
-    transition: ease-in-out .3s;
+    transition: ease .5s;
 }
 
 .nav--open:after {
@@ -50,10 +50,12 @@
 
 .nav--open .nav__line--t {
     rotate: 45deg;
+    translate: 0 0.19rem;
 }
 
 .nav--open .nav__line--b {
     rotate: -45deg;
+    translate: 0 -0.18rem;
 }
 
 .gallery__filter:after {
