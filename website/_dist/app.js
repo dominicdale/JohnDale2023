@@ -56,9 +56,9 @@ const main = document.querySelector('main')
 navToggle.addEventListener('click', () => {
     openNav();
 })
-navLink.forEach(function(e) {
-    e.addEventListener('click', () => {
-        var page = e.getAttribute('data-page');
+navLink.forEach(function(link) {
+    link.addEventListener('click', () => {
+        var page = link.getAttribute('data-page');
         switch (page) {
             case 'home':
                 home()
@@ -90,32 +90,27 @@ function closeNav() {
     main.classList.remove('scale-125')
 }
 const dots = document.querySelectorAll('.intro__dot')
-const bg = document.querySelectorAll('.intro__bg')
-dots.forEach(function(e) {
-    e.addEventListener('click', () => {
-        var img = e.getAttribute('data-img')
+const slider = document.querySelector('.intro__slider')
+const loading = document.querySelector('.loading')
+dots.forEach(function(dot) {
+    dot.addEventListener('click', () => {
+        var slide = e.getAttribute('data-slide')
+        activeSlide(slide)
         dots.forEach(function(dot) {
             dot.classList.remove('bg-white')
         })
-        e.classList.add('bg-white')
-        activeBg(img)
+        dot.classList.add('bg-white')
+        loading.classList.remove('opacity-0')
     })
 })
 
-function activeBg(src) {
-    var active = document.querySelector('.intro__bg[data-src="' + src + '"]')
-    var inactive = document.querySelectorAll('.intro__bg:not([data-src="' + src + '"])')
-    active.setAttribute('src', src)
+function activeSlide(slide) {
+    var active = document.querySelector('.intro__bg[data-slide="' + slide + '"]')
+    var img = active.getAttribute('data-src')
+    active.setAttribute('src', img)
     active.onload = function() {
-        active.classList.remove('opacity-0')
-        active.classList.add('z-10')
-        setTimeout(lol, 100)
-    }
-
-    function lol() {
-        inactive.forEach(function(e) {
-            e.classList.remove('z-10')
-        })
+        slider.style.transform = "translateX(" + slide + "vw)"
+        loading.classList.add('opacity-0')
     }
 }
 const gallery_filter = document.querySelectorAll('.gallery__filter')

@@ -58,7 +58,7 @@
     translate: 0 -0.18rem;
 }
 
-.gallery__filter:after {
+.gallery__filter:before {
     content: '';
     position: absolute;
     right: 0;
@@ -70,6 +70,11 @@
     transform: scaleX(0);
 }
 
-.gallery__filter--active:after {
+.gallery__filter--active:before {
     transform: scaleX(1);
+}
+
+.gallery__filter:not(:last-child):after {
+    content: ',';
+
 }

@@ -5,10 +5,10 @@ const loading = document.querySelector('.loading')
 dots.forEach(function(e) {
     e.addEventListener('click', () => {
         var slide = e.getAttribute('data-slide')
-        activeBg(slide)
+        activeSlide(slide)
 
-        dots.forEach(function(dot) {
-            dot.classList.remove('bg-white')
+        dots.forEach(function(e) {
+            e.classList.remove('bg-white')
         })
         e.classList.add('bg-white')
 
@@ -16,7 +16,7 @@ dots.forEach(function(e) {
     })
 })
 
-function activeBg(slide) {
+function activeSlide(slide) {
     var active = document.querySelector('.intro__bg[data-slide="' + slide + '"]')
     var img = active.getAttribute('data-src')
     active.setAttribute('src', img)
@@ -24,6 +24,5 @@ function activeBg(slide) {
     active.onload = function () {
         slider.style.transform = "translateX(" + slide + "vw)"
         loading.classList.add('opacity-0')
-        
     }
 }

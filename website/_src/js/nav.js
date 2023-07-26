@@ -4,12 +4,12 @@ const navLink = document.querySelectorAll('.main-link')
 const main = document.querySelector('main')
 
 navToggle.addEventListener('click', () => {
-    openNav();
+    openNav()
 })
 
-navLink.forEach(function(e) {
-    e.addEventListener('click', () => {
-        var page = e.getAttribute('data-page');
+navLink.forEach(function(link) {
+    link.addEventListener('click', () => {
+        var page = link.getAttribute('data-page');
 
         switch(page) {
             case 'home':
