@@ -1,13 +1,14 @@
 {
   "devDependencies": {
+    "bundle-js": "^1.0.3",
     "html-includes": "^5.0.0",
     "postcss-import": "^15.1.0",
     "tailwindcss": "^3.3.2"
   },
   "scripts": {
-    "test": "bundle-js ./_src/js/app.js -o ./_dist/app.js && minify ./_dist/app.js > ./_dist/app.min.js && npx tailwindcss -i input.css -o output.css --watch --minify",
+    "js": "bundle-js ./_src/js/app.js -o ./_dist/app.js",
     "html": "html-includes --src _src --dest . --minify --watch",
     "tailwind": "npx tailwindcss -i input.css -o output.css --watch --minify",
-    "build": "html-includes --src _src --dest . --minify --watch & npx tailwindcss -i input.css -o output.css --watch --minify"
+    "build": "html-includes --src _src --dest . --minify --watch & npx tailwindcss -i input.css -o output.css --watch --minify & bundle-js ./_src/js/app.js -o ./_dist/app.js"
   }
 }

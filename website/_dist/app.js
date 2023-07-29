@@ -9,6 +9,7 @@ function home() {
     closeContact()
     closeOverlay()
     introPanel.classList.remove('scale-75')
+    console.log('lmao')
 }
 
 function gallery() {
@@ -54,7 +55,7 @@ const nav = document.querySelector('.nav')
 const navLink = document.querySelectorAll('.main-link')
 const main = document.querySelector('main')
 navToggle.addEventListener('click', () => {
-    openNav();
+    openNav()
 })
 navLink.forEach(function(link) {
     link.addEventListener('click', () => {
@@ -92,14 +93,14 @@ function closeNav() {
 const dots = document.querySelectorAll('.intro__dot')
 const slider = document.querySelector('.intro__slider')
 const loading = document.querySelector('.loading')
-dots.forEach(function(dot) {
-    dot.addEventListener('click', () => {
+dots.forEach(function(e) {
+    e.addEventListener('click', () => {
         var slide = e.getAttribute('data-slide')
         activeSlide(slide)
-        dots.forEach(function(dot) {
-            dot.classList.remove('bg-white')
+        dots.forEach(function(e) {
+            e.classList.remove('bg-white')
         })
-        dot.classList.add('bg-white')
+        e.classList.add('bg-white')
         loading.classList.remove('opacity-0')
     })
 })
