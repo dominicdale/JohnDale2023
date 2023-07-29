@@ -10,7 +10,6 @@ function home() {
     closeContact()
     closeOverlay()
     introPanel.classList.remove('scale-75')
-    console.log('lmao')
 }
 
 function gallery() {

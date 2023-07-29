@@ -3,12 +3,13 @@
     "bundle-js": "^1.0.3",
     "html-includes": "^5.0.0",
     "postcss-import": "^15.1.0",
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "^3.3.2",
+    "uglify-js": "^3.17.4"
   },
   "scripts": {
-    "js": "bundle-js ./_src/js/app.js -o ./_dist/app.js",
+    "js": "bundle-js ./_src/js/app.js -o ./_dist/app.js && uglifyjs ./_dist/app.js -o ./_dist/app.min.js --compress --mangle",
     "html": "html-includes --src _src --dest . --minify --watch",
     "tailwind": "npx tailwindcss -i input.css -o output.css --watch --minify",
-    "build": "html-includes --src _src --dest . --minify --watch & npx tailwindcss -i input.css -o output.css --watch --minify & bundle-js ./_src/js/app.js -o ./_dist/app.js"
+    "build": "html-includes --src _src --dest . --minify --watch & npx tailwindcss -i input.css -o output.css --watch --minify & bundle-js ./_src/js/app.js -o ./_dist/app.js && uglifyjs ./_dist/app.js -o ./_dist/app.min.js --compress --mangle"
   }
 }
