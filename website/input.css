@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.intro {
+    max-width: calc(100% - 2.5rem);
+}
+
 .grid__item--hide {
     pointer-events: none;
     display: none;
@@ -77,4 +81,16 @@
 .gallery__filter:not(:last-child):after {
     content: ',';
 
+}
+
+.overlay__width:before {
+    content: 'width: ';
+}
+
+.overlay__height:before {
+    content: 'height: ';
+}
+
+.overlay__price:before {
+    content: '\00A3';
 }

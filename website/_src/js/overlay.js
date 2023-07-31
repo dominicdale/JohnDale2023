@@ -5,8 +5,8 @@ const overlay_price =  document.querySelector('.overlay__price')
 const overlay_width = document.querySelector('.overlay__width')
 const overlay_height = document.querySelector('.overlay__height')
 const overlay_framed = document.querySelector('.overlay__framed')
-const overlay_contact =  document.querySelector('.icon--mail')
-const overlay_open =  document.querySelector('.icon--fullscreen')
+const overlay_contact =  document.querySelector('.overlay__contact')
+const overlay_open =  document.querySelector('.overlay__fullscreen')
 const overlay_close = document.querySelector('.overlay__close')
 
 function populateOverlay(e) {
