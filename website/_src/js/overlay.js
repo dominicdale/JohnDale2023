@@ -8,6 +8,8 @@ const overlay_framed = document.querySelector('.overlay__framed')
 const overlay_contact =  document.querySelector('.overlay__contact')
 const overlay_open =  document.querySelector('.overlay__fullscreen')
 const overlay_close = document.querySelector('.overlay__close')
+const contact_message = document.querySelector('#contactMessage')
+const overlay_fit = document.querySelector('.overlay__fit')
 
 function populateOverlay(e) {
     var img = e.getAttribute('data-img'),
@@ -40,23 +42,13 @@ function populateOverlay(e) {
 
     overlay_framed.innerText = framed
     overlay_open.setAttribute('href', img)
-    // contact_message.innerHTML = "Enquiring about " + title
+    contact_message.innerHTML = "Enquiring about " + title
 
-    // Once image loaded, open overlay
-    // overlay_img.onload = function() {
-    //     overlay.classList.add('overlay--active') 
-    // }
-
-    // Contact button
-    // overlay_contact.addEventListener('click', function() {
-    //     closeOverlay()
-    //     layout.className = ''
-    //     layout.classList.add('layout--Contact')
-    // })
-
-    // Close overlay
-    // overlay_close.addEventListener('click', function() {
-    //     closeOverlay()
-    //     contact_message.innerHTML = ''
-    // })
+    overlay_contact.addEventListener('click', ()=> {
+        contact()
+    })
 }
+
+overlay_fit.addEventListener('click', ()=> {
+    overlay_img.classList.toggle('max-w-[50vw]')
+})

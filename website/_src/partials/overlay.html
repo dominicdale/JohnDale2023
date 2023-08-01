@@ -1,22 +1,27 @@
-<section class="panel panel--overlay w-screen h-screen absolute bg-[#202024] text-white -translate-x-full ease-in-out duration-1000 p-10 pt-32 z-20 overflow-y-auto flex flex-col gap-6 overflow-x-hidden">
-    <button onclick="closeOverlay()" class="overlay__close fixed top-10 right-10 max-sm:top-5 max-sm:right-5 bg-white w-10 h-10 flex justify-center items-center" aria-label="Close Overlay">
+<section class="panel panel--overlay w-screen h-screen absolute bg-[#202024] -translate-x-full ease-in-out duration-1000 z-40 overflow-y-auto flex flex-col gap-6 overflow-x-hidden">
+    <button onclick="closeOverlay()" class="overlay__close fixed top-10 left-10 max-sm:top-5 max-sm:left-5 bg-white w-10 h-10 flex justify-center items-center z-10" aria-label="Close Overlay">
         <img src="/icons/close.svg" alt="Close overlay" class="w-6">
     </button>
-    <div class="flex flex-col md:max-w-[70vw] w-full gap-6 m-auto relative">
-        <a href="" class="overlay__fullscreen bg-white w-10 h-10 absolute top-4 right-4 flex justify-center items-center" target="_blank" aria-label="View image fullscreen">
-            <img src="/icons/fullscreen.svg" alt="View image fullscreen" class="w-6">
-        </a>
-        <img src="" class="overlay__img h-auto" width="0" height="0" alt=""/>
-        <div>
-            <h2 class="text-6xl max-sm:text-5xl tracking-tight font-bold font-serif overlay__title"></h2>
-            <p class="overlay__description"></p>
+    <div class="flex flex-1">
+        <div class="relative flex-1 flex">
+            <div class="flex gap-4 absolute top-10 right-10">
+                <button class="overlay__fit bg-white w-10 h-10 flex justify-center items-center" target="_blank" aria-label="View image fullscreen">
+                    <img src="/icons/resize.svg" alt="View image fullscreen" class="w-6">
+                </button>
+                <a href="" class="overlay__fullscreen bg-white w-10 h-10 flex justify-center items-center" target="_blank" aria-label="View image fullscreen">
+                    <img src="/icons/fullscreen.svg" alt="View image fullscreen" class="w-6">
+                </a>
+            </div>
+            <img src="" class="overlay__img w-full h-auto max-h-[100vh] object-cover ease-in-out duration-500 m-auto " width="0" height="0" alt=""/>
         </div>
-        <div class="overlay__info flex gap-4 flex-wrap">
-            <a class="overlay__contact bg-white px-8 py-4 rounded-lg font-serif text-2xl text-gray-800 flex items-center">Enquire</a>
-            <span class="overlay__width bg-white/5 px-8 py-4 rounded-lg empty:hidden flex items-center"></span>
-            <span class="overlay__height bg-white/5 px-8 py-4 rounded-lg empty:hidden flex items-center"></span>
-            <span class="overlay__framed bg-white/5 px-8 py-4 rounded-lg empty:hidden flex items-center"></span>
-            <span class="overlay__price bg-white/5 px-8 py-4 rounded-lg empty:hidden flex items-center"></span>
+        <div class="w-80 bg-white p-8">
+            <h2 class="text-2xl max-sm:text-5xl tracking-tight font-bold font-serif overlay__title"></h2>
+            <p class="overlay__description"></p>
+            <span class="overlay__width "></span>
+            <span class="overlay__height "></span>
+            <span class="overlay__framed "></span>
+            <span class="overlay__price "></span>
+            <a class="overlay__contact">Enquire</a>
         </div>
     </div>
 </section>

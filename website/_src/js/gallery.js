@@ -1,5 +1,4 @@
 const gallery_filter = document.querySelectorAll('.gallery__filter')
-const contact_message = document.querySelector('#contactMessage')
 const item = document.querySelectorAll('.grid__item')
 
 
