@@ -45,6 +45,8 @@ function overlay() {
 function closeOverlay() {
     overlayPanel.classList.add('-translate-x-full')
     galleryPanel.classList.remove('scale-75')
+    overlay_img.classList.remove('w-full')
+    overlay_img.classList.remove('max-h-none')
 }
 
 function introScale() {

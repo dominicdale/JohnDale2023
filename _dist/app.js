@@ -44,6 +44,8 @@ function overlay() {
 function closeOverlay() {
     overlayPanel.classList.add('-translate-x-full')
     galleryPanel.classList.remove('scale-75')
+    overlay_img.classList.remove('w-full')
+    overlay_img.classList.remove('max-h-none')
 }
 
 function introScale() {
@@ -178,6 +180,7 @@ function populateOverlay(e) {
         height = e.getAttribute('data-height')
     overlay_img.setAttribute('src', img)
     overlay_img.setAttribute('alt', title)
+    overlay_img.setAttribute('width', '')
     overlay_img.addEventListener('load', (event) => {
         console.log('width', event.target.width)
         console.log('height', event.target.height)
