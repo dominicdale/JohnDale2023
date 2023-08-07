@@ -2,14 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.grid__item--hide {
-    pointer-events: none;
-    display: none;
-    opacity: 0;
-}
-
-.grid__item--active {
+.grid__item--animate {
     animation: fadeIn .7s ease;
     animation-fill-mode: forwards;
 }
@@ -81,11 +74,11 @@
 }
 
 .overlay__width:before {
-    content: 'width: ';
+    content: 'Width: ';
 }
 
 .overlay__height:before {
-    content: 'height: ';
+    content: 'Height: ';
 }
 
 .overlay__price:before {

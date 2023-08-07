@@ -126,18 +126,18 @@ gallery_filter.forEach(function(el) {
         el.classList.add('gallery__filter--active')
         item.forEach(function(e) {
             showItems(e)
-            e.classList.remove('grid__item--active')
+            e.classList.remove('grid__item--animate')
         })
         item.forEach(function(e) {
             if (e.getAttribute('data-id') == filter) {
-                activeItems(e)
+                animateItems(e)
             } else {
-                e.classList.add('grid__item--hide')
+                hideItems(e)
             }
         })
         if (el.getAttribute('data-filter') == 'all') {
             item.forEach(function(e) {
-                activeItems(e)
+                animateItems(e)
                 showItems(e)
             })
         }
@@ -150,12 +150,20 @@ item.forEach(function(e) {
     })
 })
 
-function showItems(e) {
-    e.classList.remove('grid__item--hide')
+function hideItems(e) {
+    e.classList.add('hidden')
+    e.classList.add('pointer-events-none')
+    e.classList.add('opacity-0')
 }
 
-function activeItems(e) {
-    e.classList.add('grid__item--active')
+function showItems(e) {
+    e.classList.remove('hidden')
+    e.classList.remove('pointer-events-none')
+    e.classList.remove('opacity-0')
+}
+
+function animateItems(e) {
+    e.classList.add('grid__item--animate')
 }
 const overlay_img = document.querySelector('.overlay__img')
 const overlay_title = document.querySelector('.overlay__title')
@@ -182,8 +190,6 @@ function populateOverlay(e) {
     overlay_img.setAttribute('alt', title)
     overlay_img.setAttribute('width', '')
     overlay_img.addEventListener('load', (event) => {
-        console.log('width', event.target.width)
-        console.log('height', event.target.height)
         event.target.setAttribute('width', event.target.width)
     })
     overlay_title.innerText = title

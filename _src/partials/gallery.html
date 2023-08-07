@@ -8,7 +8,6 @@
             ${require('/partials/filter.html') id=`landscapes` name=`Landscapes`}
             ${require('/partials/filter.html') id=`lockdown` name=`Lockdown`}
             ${require('/partials/filter.html') id=`oilPastels` name=`Oil Pastels`}
-            ${require('/partials/filter.html') id=`photos` name=`Photos`}
             ${require('/partials/filter.html') id=`plasterPaintings` name=`Plaster Paintings`}
             ${require('/partials/filter.html') id=`stAbbs` name=`St. Abbs`}
             ${require('/partials/filter.html') id=`stillLife` name=`Still Life`}
@@ -16,10 +15,7 @@
         </nav>
     </div>
 
-    <div class="columns-3 max-md:columns-2 max-sm:columns-1 gap-5 max-md:gap-3 mt-10">
-        ${require('/partials/card.html') title=`Black boats` id=`landscapes` img=`/img/intro1.webp` description=`Acrylic on cardboard` price=`50` width=`100` height=`150` frame=`Framed`}
-
-        ${require('/partials/card.html') title=`Black boats` id=`landscapes` img=`/img/test.jpg` description=`Acrylic on cardboard` price=`50` width=`100` height=`150` frame=`Framed`}
-
-</div>
+    <div class="columns-3 max-md:columns-2 max-sm:columns-1 gap-8 max-md:gap-3 mt-10">
+        ${require('/partials/gallerylist.html')}
+    </div>
 </section>

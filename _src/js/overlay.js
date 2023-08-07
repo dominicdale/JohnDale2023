@@ -25,9 +25,6 @@ function populateOverlay(e) {
     overlay_img.setAttribute('width', '')
 
     overlay_img.addEventListener('load', (event) => {
-        console.log('width', event.target.width)
-        console.log('height', event.target.height)
-
         event.target.setAttribute('width', event.target.width)
     })
 
