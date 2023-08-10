@@ -47,6 +47,9 @@ function closeOverlay() {
     galleryPanel.classList.remove('scale-75')
     overlay_img.classList.remove('w-full')
     overlay_img.classList.remove('max-h-none')
+    overlay_price.innerText = ''
+    overlay_height.innerText = ''
+    overlay_width.innerText = ''
 }
 
 function introScale() {

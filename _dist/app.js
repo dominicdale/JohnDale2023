@@ -46,6 +46,9 @@ function closeOverlay() {
     galleryPanel.classList.remove('scale-75')
     overlay_img.classList.remove('w-full')
     overlay_img.classList.remove('max-h-none')
+    overlay_price.innerText = ''
+    overlay_height.innerText = ''
+    overlay_width.innerText = ''
 }
 
 function introScale() {
@@ -118,7 +121,7 @@ function activeSlide(slide) {
 const gallery_filter = document.querySelectorAll('.gallery__filter')
 const item = document.querySelectorAll('.grid__item')
 gallery_filter.forEach(function(el) {
-    el.addEventListener('click', function() {
+    el.addEventListener('click', () => {
         const filter = el.getAttribute('data-filter')
         gallery_filter.forEach(function(e) {
             e.classList.remove('gallery__filter--active')
