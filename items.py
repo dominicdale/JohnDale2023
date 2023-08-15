@@ -1148,28 +1148,28 @@ data = [
 "data-width: 0",
 "data-height: 0",
 "data-framed: Not Framed",
-"Group: IMG 20150404 182158~2",
+"Group: IMG 20150404 1821582",
 "data-id: italy",
 "data-img: /img/img_20150404_182158-2.jpg",
-"data-title: IMG 20150404 182158~2",
+"data-title: IMG 20150404 1821582",
 "data-description: ",
 "data-price: 0",
 "data-width: 0",
 "data-height: 0",
 "data-framed: Not Framed",
-"Group: IMG 20150404 182141~2~2",
+"Group: IMG 20150404 18214122",
 "data-id: italy",
 "data-img: /img/img_20150404_182141-2-2.jpg",
-"data-title: IMG 20150404 182141~2~2",
+"data-title: IMG 20150404 18214122",
 "data-description: ",
 "data-price: 0",
 "data-width: 0",
 "data-height: 0",
 "data-framed: Not Framed",
-"Group: IMG 20150404 182425~2",
+"Group: IMG 20150404 1824252",
 "data-id: italy",
 "data-img: /img/img_20150404_182425-2.jpg",
-"data-title: IMG 20150404 182425~2",
+"data-title: IMG 20150404 1824252",
 "data-description: ",
 "data-price: 0",
 "data-width: 0",
@@ -1193,27 +1193,29 @@ data = [
 "data-width: 0",
 "data-height: 0",
 "data-framed: Not Framed",
-"Group: IMG 20150404 182518~2~2",
+"Group: IMG 20150404 18251822",
 "data-id: italy",
 "data-img: /img/img_20150404_182518-2-2.jpg",
-"data-title: IMG 20150404 182518~2~2",
+"data-title: IMG 20150404 18251822",
 "data-description: ",
 "data-price: 0",
 "data-width: 0",
 "data-height: 0",
 "data-framed: Not Framed",
-"Group: IMG 20150404 182555~2",
+"Group: IMG 20150404 1825552",
 "data-id: italy",
 "data-img: /img/img_20150404_182555-2.jpg",
-"data-title: IMG 20150404 182555~2",
+"data-title: IMG 20150404 1825552",
 "data-description: ",
 "data-price: 0",
 "data-width: 0",
 "data-height: 0",
 "data-framed: Not Framed ",
 ]
-# Initialize a list to store attribute dictionaries for each group
-group_attributes = []
+
+
+# Initialize a dictionary to store attributes for each group
+group_attributes = {}
 
 # Initialize a dictionary to hold the current group's attributes
 current_attributes = {}
@@ -1223,7 +1225,10 @@ for item in data:
     if item.startswith("Group: "):
         # Store previous group's attributes and reset the current attributes dictionary
         if current_attributes:
-            group_attributes.append(current_attributes)
+            group_id = current_attributes.get('data-id', 'default')  # Use a default ID if not present
+            if group_id not in group_attributes:
+                group_attributes[group_id] = []
+            group_attributes[group_id].append(current_attributes)
         current_attributes = {'Group': item.replace("Group: ", "")}
     else:
         key, value = item.split(': ', 1)
@@ -1231,10 +1236,14 @@ for item in data:
 
 # Append the last group's attributes
 if current_attributes:
-    group_attributes.append(current_attributes)
+    group_id = current_attributes.get('data-id', 'default')  # Use a default ID if not present
+    if group_id not in group_attributes:
+        group_attributes[group_id] = []
+    group_attributes[group_id].append(current_attributes)
 
-# Create and write the populated templates for each group to an HTML file
-with open('_src/partials/gallerylist.html', 'w') as html_file:
-    for attributes in group_attributes:
-        template = f"${{require('/partials/card.html') title=`{attributes.get('data-title', '')}` id=`{attributes.get('data-id', '')}` img=`{attributes.get('data-img', '')}` description=`{attributes.get('data-description', '')}` price=`{attributes.get('data-price', '')}` width=`{attributes.get('data-width', '')}` height=`{attributes.get('data-height', '')}` frame=`{attributes.get('data-framed', '')}`}}"
-        html_file.write(template + '\n')
+# Create and write the populated templates for each group to separate HTML files
+for group_id, attributes_list in group_attributes.items():
+    with open(f'_src/partials/gallerylist_{group_id}.html', 'w') as html_file:
+        for attributes in attributes_list:
+            template = f"${{require('/partials/card.html') title=`{attributes.get('data-title', '')}` id=`{attributes.get('data-id', '')}` img=`{attributes.get('data-img', '')}` description=`{attributes.get('data-description', '')}` price=`{attributes.get('data-price', '')}` width=`{attributes.get('data-width', '')}` height=`{attributes.get('data-height', '')}` frame=`{attributes.get('data-framed', '')}`}}"
+            html_file.write(template + '\n')
