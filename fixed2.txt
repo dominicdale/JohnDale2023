@@ -44,7 +44,7 @@
 "data-img: /media/Lockdown/Tree 4.jpg",x
 "data-img: /media/Lockdown/Tree.jpg",x
 "data-img: /media/Lockdown/Vista.jpg",x
-"data-img: /media/Oil Pastels/By the Clyde.jpg",
+"data-img: /media/Oil Pastels/By the Clyde.jpg",x
 "data-img: /media/Oil Pastels/Clouds 2.jpg",x
 "data-img: /media/Oil Pastels/Clouds 3.jpg",x
 "data-img: /media/Oil Pastels/Clouds 4.jpg",x
@@ -64,41 +64,41 @@
 "data-img: /media/Plaster Paintings/Red landscape.jpg",z
 "data-img: /media/Plaster Paintings/Snowscape.jpg",x
 "data-img: /media/Plaster Paintings/Trees in the distance.jpg",x
-"data-img: /media/Plaster Paintings/Trees on the hill.jpg",
-"data-img: /media/Plaster Paintings/Winter landscape.jpg",
-"data-img: /media/St. Abbs/Bird's eye view.jpg",
-"data-img: /media/St. Abbs/Blue Boat.jpg",
-"data-img: /media/St. Abbs/Fishing Boat.jpg",
-"data-img: /media/St. Abbs/Fishing Boats.jpg",
-"data-img: /media/St. Abbs/Harbour, St. Abbs.jpg",
-"data-img: /media/St. Abbs/Harbour.jpg",
-"data-img: /media/St. Abbs/Red Reflections.jpg",
-"data-img: /media/St. Abbs/Red fishing boat.jpg",
-"data-img: /media/St. Abbs/Telephone Box.jpg",
-"data-img: /media/St. Abbs/White Cottage.jpg",
-"data-img: /media/Still Life/Blue 2.jpg",
-"data-img: /media/Still Life/Blue table.jpg",
-"data-img: /media/Still Life/Blue.jpg",
-"data-img: /media/Still Life/Dutch Still Life.jpg",
-"data-img: /media/Still Life/Pink still life.jpg",
-"data-img: /media/Still Life/Purple table.jpg",
-"data-img: /media/Still Life/Red table.jpg",
-"data-img: /media/Still Life/Squinty vase of flowers.jpg",
-"data-img: /media/Still Life/Sunflower.jpg",
-"data-img: /media/Still Life/Tulips.jpg",
-"data-img: /media/Still Life/Vase of flowers.jpg",
-"data-img: /media/Venice/Blue sky.jpg",
-"data-img: /media/Venice/Grand Canal.jpg",
-"data-img: /media/Venice/Padua.jpg",
-"data-img: /media/Venice/Pink Building.jpg",
-"data-img: /media/Venice/Pink Palace.jpg",
-"data-img: /media/Venice/Red Pavement.jpg",
-"data-img: /media/Venice/Squinty Building.jpg",
-"data-img: /media/Venice/Street Light.jpg",
-"data-img: /media/Venice/Street Scene.jpg",
-"data-img: /media/Venice/Study.jpg",
-"data-img: /media/Venice/Venetian Building.jpg",
-"data-img: /media/Venice/Venetian Buildings.jpg",
-"data-img: /media/Venice/Venetian Street Scene.jpg",
-"data-img: /media/Venice/Venetian Theatre.jpg",
-"data-img: /media/Venice/View from Hotel.jpg",
+"data-img: /media/Plaster Paintings/Trees on the hill.jpg",x
+"data-img: /media/Plaster Paintings/Winter landscape.jpg",x
+"data-img: /media/St. Abbs/Bird's eye view.jpg",x
+"data-img: /media/St. Abbs/Blue Boat.jpg",x
+"data-img: /media/St. Abbs/Fishing Boat.jpg",x
+"data-img: /media/St. Abbs/Fishing Boats.jpg",x
+"data-img: /media/St. Abbs/Harbour, St. Abbs.jpg",x
+"data-img: /media/St. Abbs/Harbour.jpg",x
+"data-img: /media/St. Abbs/Red Reflections.jpg",x
+"data-img: /media/St. Abbs/Red fishing boat.jpg",x
+"data-img: /media/St. Abbs/Telephone Box.jpg",x
+"data-img: /media/St. Abbs/White Cottage.jpg",x
+"data-img: /media/Still Life/Blue 2.jpg",x
+"data-img: /media/Still Life/Blue table.jpg",x
+"data-img: /media/Still Life/Blue.jpg",x
+"data-img: /media/Still Life/Dutch Still Life.jpg",x
+"data-img: /media/Still Life/Pink still life.jpg",x
+"data-img: /media/Still Life/Purple table.jpg",x
+"data-img: /media/Still Life/Red table.jpg",x
+"data-img: /media/Still Life/Squinty vase of flowers.jpg",x
+"data-img: /media/Still Life/Sunflower.jpg",x
+"data-img: /media/Still Life/Tulips.jpg",x
+"data-img: /media/Still Life/Vase of flowers.jpg",x
+"data-img: /media/Venice/Blue sky.jpg",x
+"data-img: /media/Venice/Grand Canal.jpg",x
+"data-img: /media/Venice/Padua.jpg",x
+"data-img: /media/Venice/Pink Building.jpg",x
+"data-img: /media/Venice/Pink Palace.jpg",x
+"data-img: /media/Venice/Red Pavement.jpg",x
+"data-img: /media/Venice/Squinty Building.jpg",x
+"data-img: /media/Venice/Street Light.jpg",x
+"data-img: /media/Venice/Street Scene.jpg",x
+"data-img: /media/Venice/Study.jpg",x
+"data-img: /media/Venice/Venetian Building.jpg",x
+"data-img: /media/Venice/Venetian Buildings.jpg",x
+"data-img: /media/Venice/Venetian Street Scene.jpg",x
+"data-img: /media/Venice/Venetian Theatre.jpg",x
+"data-img: /media/Venice/View from Hotel.jpg",x
