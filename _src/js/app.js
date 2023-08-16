@@ -3,4 +3,5 @@
 // require ./intro.js
 // require ./gallery.js
 // require ./overlay.js
+// require ./loading.js
 

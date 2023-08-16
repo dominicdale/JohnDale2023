@@ -8,7 +8,7 @@
 <body class="overflow-hidden text-gray-800">
     ${require('/partials/nav.html')}
 
-    <main class="w-screen h-screen relative ease-in-out duration-700 overflow-hidden">
+    <main class="layout w-screen h-screen relative ease-in-out duration-700 overflow-hidden scale-75">
         ${require('/partials/intro.html')}
 
         ${require('/partials/contact.html')}
@@ -17,6 +17,8 @@
 
         ${require('/partials/gallery.html')}
     </main>
+
+    ${require('/partials/loading.html')}
 
     <script src="/_dist/app.min.js"></script>
 </body>

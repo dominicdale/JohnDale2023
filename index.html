@@ -16,7 +16,7 @@
 </head>
 
 <body class="overflow-hidden text-gray-800">
-    <nav class="nav fixed top-10 left-10 max-sm:top-5 max-sm:left-5 z-30 flex items-center gap-3 z-30">
+    <nav class="nav fixed top-10 left-10 max-sm:top-5 max-sm:left-5 z-30 flex items-center gap-3 z-30 ease-in-out duration-500 translate-y-8 opacity-0 animate">
     <button class="nav__toggle bg-white w-10 h-10 flex flex-col gap-1 items-center justify-center select-none cursor-pointer" tabindex="1">
         <span class="nav__line nav__line--t block w-4 h-[0.15rem] bg-black relative ease-in-out duration-300"></span>
         <span class="nav__line nav__line--b block w-4 h-[0.15rem] bg-black relative ease-in-out duration-300"></span>
@@ -29,9 +29,9 @@
     </div>
 </nav>
 
-    <main class="w-screen h-screen relative ease-in-out duration-700 overflow-hidden">
+    <main class="layout w-screen h-screen relative ease-in-out duration-700 overflow-hidden scale-75">
         <section class="panel panel--intro w-screen h-screen absolute inset-0 flex flex-col items-center justify-center bg-slate-50 ease-in-out duration-1000 overflow-x-hidden">
-    <div class="intro absolute bottom-10 left-10 max-sm:bottom-5 max-sm:left-5 max-sm:right-5 bg-white p-10 z-30 max-w-xl text-left flex flex-col gap-7 rounded-br-[3.75rem] shadow-2xl">
+    <div class="intro absolute bottom-10 left-10 max-sm:bottom-5 max-sm:left-5 max-sm:right-5 bg-white p-10 z-30 max-w-xl text-left flex flex-col gap-7 rounded-br-[3.75rem] shadow-2xl animate ease-in-out duration-500 translate-y-8 opacity-0 delay-300">
         <h1 class="text-6xl tracking-tight font-bold font-serif">John Dale</h1>
         <p class="leading-7 [text-wrap:balance]">Graduate of Glasgow School of Art in Fine Art, Drawing and Painting. 1980. The work on my website reflects how my work has developed and changed over the years.</p>
         <div class="flex gap-4">
@@ -52,7 +52,7 @@
         <button data-slide="-200" class="intro__dot w-4 h-4 rounded-full border-2 border-white"></button>
     </div>
     
-    <span class="loading absolute right-10 top-10 max-sm:top-14 max-sm:right-5 w-8 h-8 rounded-full border-4 border-white border-l-transparent animate-spin ease-in-out duration-500 opacity-0"></span>
+    <span class="intro__load absolute right-10 top-10 max-sm:top-14 max-sm:right-5 w-8 h-8 rounded-full border-4 border-white border-l-transparent animate-spin ease-in-out duration-500 opacity-0"></span>
 </section>
 
         <section class="panel panel--contact w-screen h-screen absolute inset-0 bg-slate-200 translate-y-full p-10 pt-40 max-sm:p-5 max-sm:pt-40 z-20 overflow-y-auto ease-in-out duration-1000 flex items-center justify-center overflow-x-hidden">
@@ -74,16 +74,19 @@
     <button onclick="closeOverlay()" class="overlay__close fixed top-10 left-10 max-sm:top-5 max-sm:left-5 bg-white w-10 h-10 flex justify-center items-center z-10" aria-label="Close Overlay">
         <img src="/icons/close.svg" alt="Close overlay" class="w-6">
     </button>
+    <div class="flex gap-4 fixed top-10 right-[360px] max-sm:top-5 max-sm:right-5 z-10">
+        <button class="overlay__minus bg-white w-10 h-10 flex justify-center items-center max-md:hidden opacity-60 ease-in-out duration-300" target="_blank" aria-label="View image fullscreen">
+            <img src="/icons/minus.svg" alt="View image fullscreen" class="w-6">
+        </button>
+        <button class="overlay__plus bg-white w-10 h-10 flex justify-center items-center max-md:hidden" target="_blank" aria-label="View image fullscreen">
+            <img src="/icons/plus.svg" alt="View image fullscreen" class="w-6">
+        </button>
+        <a href="" class="overlay__download bg-white w-10 h-10 flex justify-center items-center" aria-label="Download image" download>
+            <img src="/icons/download.svg" alt="View image fullscreen" class="w-6">
+        </a>
+    </div>
     <div class="flex flex-1 max-md:flex-col">
         <div class="relative flex-1 flex max-h-[100vh] overflow-auto">
-            <div class="flex gap-4 absolute top-10 right-10 max-sm:top-5 max-sm:right-5">
-                <button class="overlay__fit bg-white w-10 h-10 flex justify-center items-center max-md:hidden" target="_blank" aria-label="View image fullscreen">
-                    <img src="/icons/resize.svg" alt="View image fullscreen" class="w-6">
-                </button>
-                <a href="" class="overlay__download bg-white w-10 h-10 flex justify-center items-center" aria-label="Download image" download>
-                    <img src="/icons/download.svg" alt="View image fullscreen" class="w-6">
-                </a>
-            </div>
             <img src="" class="overlay__img h-auto max-h-[90vh] object-cover ease-in-out duration-500 m-auto max-md:w-full"  alt=""/>
         </div>
         <div class="md:w-80 bg-white p-8 flex flex-col gap-5">
@@ -1052,6 +1055,10 @@
     </div>
 </section>
     </main>
+
+    <section class="loading fixed inset-0 bg-[#202024] flex items-center justify-center z-50 ease-in-out duration-1000">
+    <span class="w-12 h-12 rounded-full border-8 border-white border-r-transparent animate-spin"></span>
+</section>
 
     <script src="/_dist/app.min.js"></script>
 </body>

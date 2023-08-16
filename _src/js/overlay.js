@@ -9,7 +9,8 @@ const overlay_contact = document.querySelector('.overlay__contact')
 const overlay_open = document.querySelector('.overlay__download')
 const overlay_close = document.querySelector('.overlay__close')
 const contact_message = document.querySelector('#contactMessage')
-const overlay_fit = document.querySelector('.overlay__fit')
+const overlay_minus = document.querySelector('.overlay__minus')
+const overlay_plus = document.querySelector('.overlay__plus')
 
 function populateOverlay(e) {
     var img = e.getAttribute('data-img'),
@@ -54,8 +55,39 @@ function populateOverlay(e) {
 
 }
 
-overlay_fit.addEventListener('click', () => {
-    overlay_img.classList.toggle('w-full')
-    overlay_img.classList.toggle('max-h-none')
-})
+let zoom_level = 0;
 
+overlay_minus.addEventListener('click', () => {
+    if (zoom_level > 0) {
+        zoom_level--;
+
+        if (zoom_level === 0) {
+            overlay_img.classList.remove('w-full');
+            overlay_img.classList.remove('max-h-none');
+            overlay_img.classList.remove('max-w-none');
+
+        }
+        else if (zoom_level === 1) {
+            overlay_img.classList.remove('w-[200%]');
+        }
+        console.log(zoom_level);
+    }
+});
+
+overlay_plus.addEventListener('click', () => {
+    if (zoom_level < 2) {
+        zoom_level++;
+
+        if (zoom_level === 1) {
+            overlay_img.classList.add('w-full');
+            overlay_img.classList.add('max-h-none');
+            overlay_minus.classList.remove('opacity-60');
+        }
+        else if (zoom_level === 2) {
+            overlay_img.classList.add('w-[200%]');
+            overlay_img.classList.add('max-w-none');
+            overlay_plus.classList.add('opacity-60');
+        }
+        console.log(zoom_level);
+    }
+});

@@ -96,7 +96,7 @@ function closeNav() {
 }
 const dots = document.querySelectorAll('.intro__dot')
 const slider = document.querySelector('.intro__slider')
-const loading = document.querySelector('.loading')
+const intro_load = document.querySelector('.intro__load')
 dots.forEach(function(e) {
     e.addEventListener('click', () => {
         var slide = e.getAttribute('data-slide')
@@ -105,7 +105,7 @@ dots.forEach(function(e) {
             e.classList.remove('bg-white')
         })
         e.classList.add('bg-white')
-        loading.classList.remove('opacity-0')
+        intro_load.classList.remove('opacity-0')
     })
 })
 
@@ -115,7 +115,7 @@ function activeSlide(slide) {
     active.setAttribute('src', img)
     active.onload = function() {
         slider.style.transform = "translateX(" + slide + "vw)"
-        loading.classList.add('opacity-0')
+        intro_load.classList.add('opacity-0')
     }
 }
 const gallery_filter = document.querySelectorAll('.gallery__filter')
@@ -179,7 +179,8 @@ const overlay_contact = document.querySelector('.overlay__contact')
 const overlay_open = document.querySelector('.overlay__download')
 const overlay_close = document.querySelector('.overlay__close')
 const contact_message = document.querySelector('#contactMessage')
-const overlay_fit = document.querySelector('.overlay__fit')
+const overlay_minus = document.querySelector('.overlay__minus')
+const overlay_plus = document.querySelector('.overlay__plus')
 
 function populateOverlay(e) {
     var img = e.getAttribute('data-img'),
@@ -213,7 +214,73 @@ function populateOverlay(e) {
         contact_message.innerHTML = "Enquiring about " + title
     })
 }
-overlay_fit.addEventListener('click', () => {
-    overlay_img.classList.toggle('w-full')
-    overlay_img.classList.toggle('max-h-none')
+// overlay_minus.addEventListener('click', (e) => {
+//     if (!overlay_minus.classList.contains('opacity-60')) {
+//         overlay_img.classList.remove('w-[200%]')
+//         overlay_plus.classList.remove('opacity-60')
+//     } else {
+//         overlay_img.classList.remove('w-full')
+//     }
+// })
+// let plusClickCount = 0;
+// overlay_plus.addEventListener('click', () => {
+//     plusClickCount++;
+//     overlay_img.classList.add('w-full')
+//     overlay_img.classList.add('max-h-none')
+//     if (plusClickCount === 2) {
+//         overlay_img.classList.add('w-[200%]')
+//         overlay_img.classList.add('max-w-none')
+//         overlay_plus.classList.add('opacity-60')
+//     }
+//     overlay_minus.classList.remove('opacity-60')
+// })
+let zoom_level = 0;
+overlay_minus.addEventListener('click', () => {
+    if (zoom_level > 0) {
+        zoom_level--;
+        if (zoom_level === 0) {
+            overlay_img.classList.remove('w-full');
+            overlay_img.classList.remove('max-h-none');
+            overlay_img.classList.remove('max-w-none');
+        } else if (zoom_level === 1) {
+            overlay_img.classList.remove('w-[200%]');
+        }
+        console.log(zoom_level);
+    }
+});
+overlay_plus.addEventListener('click', () => {
+    if (zoom_level < 2) {
+        zoom_level++;
+        if (zoom_level === 1) {
+            overlay_img.classList.add('w-full');
+            overlay_img.classList.add('max-h-none');
+            overlay_minus.classList.remove('opacity-60');
+        } else if (zoom_level === 2) {
+            overlay_img.classList.add('w-[200%]');
+            overlay_img.classList.add('max-w-none');
+            overlay_plus.classList.add('opacity-60');
+        }
+        console.log(zoom_level);
+    }
+});
+const loading = document.querySelector('.loading')
+const layout = document.querySelector('.layout')
+const animate = document.querySelectorAll('.animate')
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        loading.classList.add('translate-y-full')
+    }, 500)
+    setTimeout(() => {
+        layout.classList.remove('scale-75')
+    }, 700)
+    setTimeout(() => {
+        loaded()
+    }, 900)
 })
+
+function loaded() {
+    animate.forEach((item) => {
+        item.classList.remove('translate-y-8')
+        item.classList.remove('opacity-0')
+    })
+}

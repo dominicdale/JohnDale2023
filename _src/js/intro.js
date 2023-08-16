@@ -1,6 +1,6 @@
 const dots = document.querySelectorAll('.intro__dot')
 const slider = document.querySelector('.intro__slider')
-const loading = document.querySelector('.loading')
+const intro_load = document.querySelector('.intro__load')
 
 dots.forEach(function(e) {
     e.addEventListener('click', () => {
@@ -12,7 +12,7 @@ dots.forEach(function(e) {
         })
         e.classList.add('bg-white')
 
-        loading.classList.remove('opacity-0')
+        intro_load.classList.remove('opacity-0')
     })
 })
 
@@ -23,6 +23,6 @@ function activeSlide(slide) {
 
     active.onload = function () {
         slider.style.transform = "translateX(" + slide + "vw)"
-        loading.classList.add('opacity-0')
+        intro_load.classList.add('opacity-0')
     }
 }
