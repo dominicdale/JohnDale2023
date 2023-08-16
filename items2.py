@@ -727,7 +727,7 @@ data = [
 "data-framed: Not Framed",
 "Group: Trees In The Distance",
 "data-id: plasterPaintings",
-"data-img: /media/i5djizp2/trees-in-the-distance.jpg",
+"data-img: /media/Plaster Paintings/Trees in the distance.jpg",
 "data-title: Trees In The Distance",
 "data-description: Plaster, acrylic paint on MDF.",
 "data-price: 140",
