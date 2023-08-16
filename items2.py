@@ -1188,5 +1188,5 @@ if current_attributes:
 for group_id, attributes_list in group_attributes.items():
     with open(f'_src/partials/gallerylist_{group_id}.html', 'w') as html_file:
         for attributes in attributes_list:
-            template = f"${{require('/partials/card.html') title=`{attributes.get('data-title', '')}` id=`{attributes.get('data-id', '')}` img=`{attributes.get('data-img', '')}` description=`{attributes.get('data-description', '')}` price=`{attributes.get('data-price', '')}` width=`{attributes.get('data-width', '')}` imgHeight=`{attributes.get('data-imgHeight', '')}` imgWidth=`{attributes.get('data-imgWidth', '')}` height=`{attributes.get('data-height', '')}` frame=`{attributes.get('data-framed', '')}`}}"
+            template = f"${{require('/partials/card.html') title=`{attributes.get('data-title', '')}` id=`{attributes.get('data-id', '')}` img=`{attributes.get('data-img', '')}` description=`{attributes.get('data-description', '')}` price=`{attributes.get('data-price', '')}` width=`{attributes.get('data-width', '')}` height=`{attributes.get('data-height', '')}` imgHeight=`{attributes.get('data-imgheight', '')}` imgWidth=`{attributes.get('data-imgwidth', '')}`  frame=`{attributes.get('data-framed', '')}`}}"
             html_file.write(template + '\n')
