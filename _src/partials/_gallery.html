@@ -1,0 +1,30 @@
+<section class="panel panel--gallery w-screen h-screen absolute inset-0 bg-gray-100 translate-x-full ease-in-out duration-1000 p-10 pt-40 max-sm:p-5 max-sm:pt-40 z-20 overflow-y-auto overflow-x-hidden">
+    <div class="flex flex-col gap-4">
+        <h1 class="text-9xl max-sm:text-6xl font-serif tracking-tight">Gallery</h1>
+        <nav class="gallery__filters flex flex-wrap gap-2 max-w-2xl">
+            ${require('/partials/_filter.html') id=`all` name=`All` class=`gallery__filter--active`}
+            ${require('/partials/_filter.html') id=`abstract` name=`Abstract`}
+            ${require('/partials/_filter.html') id=`collage` name=`Collage`}
+            ${require('/partials/_filter.html') id=`landscapes` name=`Landscapes`}
+            ${require('/partials/_filter.html') id=`lockdown` name=`Lockdown`}
+            ${require('/partials/_filter.html') id=`oilPastels` name=`Oil Pastels`}
+            ${require('/partials/_filter.html') id=`plasterPaintings` name=`Plaster Paintings`}
+            ${require('/partials/_filter.html') id=`stAbbs` name=`St. Abbs`}
+            ${require('/partials/_filter.html') id=`stillLife` name=`Still Life`}
+            ${require('/partials/_filter.html') id=`italy` name=`Italy`}
+        </nav>
+    </div>
+
+    <div class="columns-3 max-md:columns-2 max-sm:columns-1 gap-8 max-md:gap-4 mt-10">
+        ${require('/partials/_gallerylist_abstract.html')}
+        ${require('/partials/_gallerylist_collage.html')}
+        ${require('/partials/_gallerylist_italy.html')}
+        ${require('/partials/_gallerylist_landscapes.html')}
+        ${require('/partials/_gallerylist_lockdown.html')}
+        ${require('/partials/_gallerylist_oilPastels.html')}
+        ${require('/partials/_gallerylist_plasterPaintings.html')}
+        ${require('/partials/_gallerylist_stAbbs.html')}
+        ${require('/partials/_gallerylist_stillLife.html')}
+        ${require('/partials/_gallerylist_venice.html')}
+    </div>
+</section>
