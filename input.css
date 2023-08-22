@@ -7,7 +7,7 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
-    src: url('/fonts/inter.woff2') format('woff2');
+    src: url('inter.woff2') format('woff2');
 }
 
 @font-face {
@@ -15,7 +15,7 @@
     font-family: 'Playfair Display';
     font-style: normal;
     font-weight: 700;
-    src: url('/fonts/playfair.woff2') format('woff2');
+    src: url('playfair.woff2') format('woff2');
 }
 
 .grid__item--animate {
