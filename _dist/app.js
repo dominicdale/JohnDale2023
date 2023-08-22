@@ -119,19 +119,19 @@ function activeSlide(slide) {
     }
 }
 const gallery_filter = document.querySelectorAll('.gallery__filter')
-const item = document.querySelectorAll('.grid__item')
-gallery_filter.forEach(function(el) {
+const items = document.querySelectorAll('.grid__item')
+gallery_filter.forEach((el) => {
     el.addEventListener('click', () => {
         const filter = el.getAttribute('data-filter')
-        gallery_filter.forEach(function(e) {
+        gallery_filter.forEach((e) => {
             e.classList.remove('gallery__filter--active')
         })
         el.classList.add('gallery__filter--active')
-        item.forEach(function(e) {
+        items.forEach((e) => {
             showItems(e)
             e.classList.remove('grid__item--animate')
         })
-        item.forEach(function(e) {
+        items.forEach((e) => {
             if (e.getAttribute('data-id') == filter) {
                 animateItems(e)
             } else {
@@ -139,14 +139,14 @@ gallery_filter.forEach(function(el) {
             }
         })
         if (el.getAttribute('data-filter') == 'all') {
-            item.forEach(function(e) {
+            items.forEach((e) => {
                 animateItems(e)
                 showItems(e)
             })
         }
     })
 })
-item.forEach(function(e) {
+items.forEach((e) => {
     e.addEventListener('click', () => {
         overlay()
         populateOverlay(e)
@@ -154,15 +154,11 @@ item.forEach(function(e) {
 })
 
 function hideItems(e) {
-    e.classList.add('hidden')
-    e.classList.add('pointer-events-none')
-    e.classList.add('opacity-0')
+    e.classList.add('hidden', 'pointer-events-none', 'opacity-0')
 }
 
 function showItems(e) {
-    e.classList.remove('hidden')
-    e.classList.remove('pointer-events-none')
-    e.classList.remove('opacity-0')
+    e.classList.remove('hidden', 'pointer-events-none', 'opacity-0')
 }
 
 function animateItems(e) {
@@ -183,18 +179,18 @@ const overlay_minus = document.querySelector('.overlay__minus')
 const overlay_plus = document.querySelector('.overlay__plus')
 
 function populateOverlay(e) {
-    var img = e.getAttribute('data-img'),
-        title = e.getAttribute('data-title'),
-        price = e.getAttribute('data-price'),
-        framed = e.getAttribute('data-framed'),
-        description = e.getAttribute('data-description'),
-        width = e.getAttribute('data-width'),
-        height = e.getAttribute('data-height')
+    const img = e.getAttribute('data-img')
+    const title = e.getAttribute('data-title')
+    const price = e.getAttribute('data-price')
+    const framed = e.getAttribute('data-framed')
+    const description = e.getAttribute('data-description')
+    const width = e.getAttribute('data-width')
+    const height = e.getAttribute('data-height')
     overlay_img.setAttribute('src', img)
     overlay_img.setAttribute('alt', title)
     overlay_img.setAttribute('width', '')
-    overlay_img.addEventListener('load', (event) => {
-        event.target.setAttribute('width', event.target.width)
+    overlay_img.addEventListener('load', () => {
+        overlay_img.setAttribute('width', overlay_img.width)
     })
     overlay_title.innerText = title
     overlay_description.innerText = description
@@ -211,58 +207,36 @@ function populateOverlay(e) {
     overlay_open.setAttribute('href', img)
     overlay_contact.addEventListener('click', () => {
         contact()
-        contact_message.innerHTML = "Enquiring about " + title
+        contact_message.innerHTML = `Enquiring about ${title}`
     })
 }
-// overlay_minus.addEventListener('click', (e) => {
-//     if (!overlay_minus.classList.contains('opacity-60')) {
-//         overlay_img.classList.remove('w-[200%]')
-//         overlay_plus.classList.remove('opacity-60')
-//     } else {
-//         overlay_img.classList.remove('w-full')
-//     }
-// })
-// let plusClickCount = 0;
-// overlay_plus.addEventListener('click', () => {
-//     plusClickCount++;
-//     overlay_img.classList.add('w-full')
-//     overlay_img.classList.add('max-h-none')
-//     if (plusClickCount === 2) {
-//         overlay_img.classList.add('w-[200%]')
-//         overlay_img.classList.add('max-w-none')
-//         overlay_plus.classList.add('opacity-60')
-//     }
-//     overlay_minus.classList.remove('opacity-60')
-// })
-let zoom_level = 0;
+let zoom_level = 0
 overlay_minus.addEventListener('click', () => {
     if (zoom_level > 0) {
-        zoom_level--;
+        zoom_level--
         if (zoom_level === 0) {
-            overlay_img.classList.remove('w-full');
-            overlay_img.classList.remove('max-h-none');
-            overlay_img.classList.remove('max-w-none');
+            overlay_img.classList.remove('w-full', 'max-h-none', 'max-w-none')
+            overlay_minus.classList.add('opacity-60')
         } else if (zoom_level === 1) {
-            overlay_img.classList.remove('w-[200%]');
+            overlay_img.classList.remove('w-[200%]')
+            overlay_plus.classList.remove('opacity-60')
         }
-        console.log(zoom_level);
+        console.log(zoom_level)
     }
-});
+})
 overlay_plus.addEventListener('click', () => {
     if (zoom_level < 2) {
-        zoom_level++;
+        zoom_level++
         if (zoom_level === 1) {
-            overlay_img.classList.add('w-full');
-            overlay_img.classList.add('max-h-none');
-            overlay_minus.classList.remove('opacity-60');
+            overlay_img.classList.add('w-full', 'max-h-none')
+            overlay_minus.classList.remove('opacity-60')
         } else if (zoom_level === 2) {
-            overlay_img.classList.add('w-[200%]');
-            overlay_img.classList.add('max-w-none');
-            overlay_plus.classList.add('opacity-60');
+            overlay_img.classList.add('w-[200%]', 'max-w-none')
+            overlay_plus.classList.add('opacity-60')
         }
-        console.log(zoom_level);
+        console.log(zoom_level)
     }
-});
+})
 const loading = document.querySelector('.loading')
 const layout = document.querySelector('.layout')
 const animate = document.querySelectorAll('.animate')
