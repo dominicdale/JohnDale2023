@@ -61,6 +61,7 @@ overlay_minus.addEventListener('click', () => {
             overlay_img.classList.remove('w-full', 'max-h-none', 'max-w-none')
             overlay_minus.classList.add('opacity-60')
         } else if (zoom_level === 1) {
+            overlay_img.classList.add('w-full')
             overlay_img.classList.remove('w-[200%]')
             overlay_plus.classList.remove('opacity-60')
 
@@ -77,6 +78,7 @@ overlay_plus.addEventListener('click', () => {
             overlay_img.classList.add('w-full', 'max-h-none')
             overlay_minus.classList.remove('opacity-60')
         } else if (zoom_level === 2) {
+            overlay_img.classList.remove('w-full')
             overlay_img.classList.add('w-[200%]', 'max-w-none')
             overlay_plus.classList.add('opacity-60')
         }

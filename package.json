@@ -7,9 +7,9 @@
     "uglify-js": "^3.17.4"
   },
   "scripts": {
-    "js": "bundle-js ./_src/js/app.js -o ./_dist/app.js && uglifyjs ./_dist/app.js -o ./_dist/app.min.js --compress --mangle",
+    "js": "bundle-js ./_src/js/app.js -o ./app.js && uglifyjs ./app.js -o ./app.min.js --compress --mangle",
     "html": "html-includes --src _src --dest . --minify --watch",
     "tailwind": "npx tailwindcss -i input.css -o output.css --watch --minify",
-    "build": "html-includes --src _src --dest . --watch & npx tailwindcss -i input.css -o output.css --watch --minify & bundle-js ./_src/js/app.js -o ./_dist/app.js && uglifyjs ./_dist/app.js -o ./_dist/app.min.js --compress --mangle"
+    "build": "html-includes --src _src --dest . --watch --minify & npx tailwindcss -i input.css -o output.css --watch --minify & bundle-js ./_src/js/app.js -o ./app.js && uglifyjs ./app.js -o ./app.min.js --compress --mangle"
   }
 }
