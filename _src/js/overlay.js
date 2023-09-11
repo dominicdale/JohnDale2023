@@ -24,9 +24,11 @@ function populateOverlay(e) {
     overlay_img.setAttribute('src', img)
     overlay_img.setAttribute('alt', title)
     overlay_img.setAttribute('width', '')
+    overlay_img.setAttribute('height', '')
 
     overlay_img.addEventListener('load', () => {
         overlay_img.setAttribute('width', overlay_img.width)
+        overlay_img.setAttribute('height', overlay_img.height)
     })
 
     overlay_title.innerText = title
@@ -85,3 +87,4 @@ overlay_plus.addEventListener('click', () => {
         console.log(zoom_level)
     }
 })
+

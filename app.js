@@ -44,11 +44,13 @@ function overlay() {
 function closeOverlay() {
     overlayPanel.classList.add('-translate-x-full')
     galleryPanel.classList.remove('scale-75')
-    overlay_img.classList.remove('w-full')
-    overlay_img.classList.remove('max-h-none')
+    overlay_img.classList.remove('w-full', 'max-h-none', 'w-[200%]')
     overlay_price.innerText = ''
     overlay_height.innerText = ''
     overlay_width.innerText = ''
+    overlay_plus.classList.remove('opacity-60')
+    overlay_minus.classList.remove('opacity-60')
+    zoom_level = 0
 }
 
 function introScale() {
@@ -189,8 +191,10 @@ function populateOverlay(e) {
     overlay_img.setAttribute('src', img)
     overlay_img.setAttribute('alt', title)
     overlay_img.setAttribute('width', '')
+    overlay_img.setAttribute('height', '')
     overlay_img.addEventListener('load', () => {
         overlay_img.setAttribute('width', overlay_img.width)
+        overlay_img.setAttribute('height', overlay_img.height)
     })
     overlay_title.innerText = title
     overlay_description.innerText = description

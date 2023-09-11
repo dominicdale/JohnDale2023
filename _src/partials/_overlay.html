@@ -9,13 +9,13 @@
         <button class="overlay__plus bg-white w-10 h-10 flex justify-center items-center max-md:hidden" target="_blank" aria-label="View image fullscreen">
             <img src="icons/plus.svg" alt="View image fullscreen" class="w-6" width="24" height="24" loading="lazy">
         </button>
-        <a href="" class="overlay__download bg-white w-10 h-10 flex justify-center items-center" aria-label="Download image" download>
+        <a href="#" class="overlay__download bg-white w-10 h-10 flex justify-center items-center" aria-label="Download image" download>
             <img src="icons/download.svg" alt="View image fullscreen" class="w-6" width="24" height="24" loading="lazy">
         </a>
     </div>
     <div class="flex flex-1 max-md:flex-col">
         <div class="relative flex-1 flex max-h-[100vh] overflow-auto">
-            <img src="" class="overlay__img h-auto max-h-[90vh] object-cover ease-in-out duration-500 m-auto max-md:w-full"  alt="" width="500" height="500"/>
+            <img src="" class="overlay__img h-auto max-h-[90vh] object-cover ease-in-out duration-500 m-auto max-md:w-full flex-none"  alt="" width="0" height="0"/>
         </div>
         <div class="md:w-80 bg-white p-8 flex flex-col gap-5">
             <div>
@@ -29,7 +29,7 @@
                 <span class="overlay__framed text-sm tracking-wide leading-6 empty:hidden"></span>
             </div>
             <hr>
-            <a class="overlay__contact bg-gray-100 px-8 py-4 rounded-lg hover:bg-gray-900 hover:text-white ease-in-out duration-300 inline-block cursor-pointer text-center">Enquire</a>
+            <button class="overlay__contact bg-gray-100 px-8 py-4 rounded-lg hover:bg-gray-900 hover:text-white ease-in-out duration-300 inline-block cursor-pointer text-center">Enquire</button>
         </div>
     </div>
 </section>

@@ -3,7 +3,6 @@ const contactPanel = document.querySelector('.panel--contact')
 const introPanel = document.querySelector('.panel--intro')
 const overlayPanel = document.querySelector('.panel--overlay')
 
-
 function home() {
     closeNav()
     closeGallery()
@@ -45,11 +44,13 @@ function overlay() {
 function closeOverlay() {
     overlayPanel.classList.add('-translate-x-full')
     galleryPanel.classList.remove('scale-75')
-    overlay_img.classList.remove('w-full')
-    overlay_img.classList.remove('max-h-none')
+    overlay_img.classList.remove('w-full', 'max-h-none', 'w-[200%]')
     overlay_price.innerText = ''
     overlay_height.innerText = ''
     overlay_width.innerText = ''
+    overlay_plus.classList.remove('opacity-60')
+    overlay_minus.classList.remove('opacity-60')
+    zoom_level = 0
 }
 
 function introScale() {
