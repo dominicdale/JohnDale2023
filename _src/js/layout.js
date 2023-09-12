@@ -36,7 +36,7 @@ function closeContact() {
     contactPanel.classList.add('translate-y-full')
 }
 
-function overlay() {
+function openOverlay() {
     galleryPanel.classList.add('scale-75')
     overlayPanel.classList.remove('-translate-x-full')
 }
@@ -44,13 +44,15 @@ function overlay() {
 function closeOverlay() {
     overlayPanel.classList.add('-translate-x-full')
     galleryPanel.classList.remove('scale-75')
-    overlay_img.classList.remove('w-full', 'max-h-none', 'w-[200%]')
-    overlay_price.innerText = ''
-    overlay_height.innerText = ''
-    overlay_width.innerText = ''
-    overlay_plus.classList.remove('opacity-60')
-    overlay_minus.classList.remove('opacity-60')
-    zoom_level = 0
+    overlay.img.classList.remove('w-full', 'max-h-none', 'w-[200%]')
+    overlay.img.classList.add('opacity-0')
+    overlay.price.innerText = ''
+    overlay.height.innerText = ''
+    overlay.width.innerText = ''
+    overlay.plus.classList.remove('opacity-60')
+    overlay.minus.classList.add('opacity-60')
+    overlay.load.classList.remove('opacity-0')
+    zoomLevel = 0
 }
 
 function introScale() {

@@ -34,7 +34,7 @@ gallery_filter.forEach((el) => {
 
 items.forEach((e) => {
     e.addEventListener('click', () => {
-        overlay()
+        openOverlay()
         populateOverlay(e)
     })
 })

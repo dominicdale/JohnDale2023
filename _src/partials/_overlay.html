@@ -14,21 +14,21 @@
         </a>
     </div>
     <div class="flex flex-1 max-md:flex-col">
-        <div class="relative flex-1 flex max-h-[100vh] overflow-auto">
-            <img src="" class="overlay__img h-auto max-h-[90vh] object-cover ease-in-out duration-500 m-auto max-md:w-full flex-none"  alt="" width="0" height="0"/>
+        <div class="relative flex-1 flex max-h-[100vh] overflow-auto items-center justify-center">
+            <img src="" class="overlay__img h-auto max-h-[90vh] object-cover ease-in-out duration-500 m-auto max-md:w-full flex-none opacity-0"  alt="" width="0" height="0"/>
+            <span class="overlay__load absolute w-12 h-12 rounded-full border-8 border-white border-r-transparent animate-spin -z-10"></span>
         </div>
-        <div class="md:w-80 bg-white p-8 flex flex-col gap-5">
+        <div class="md:w-80 bg-white p-8 flex flex-col gap-5 justify-center">
             <div>
                 <h2 class="text-3xl tracking-tight font-bold font-serif overlay__title [text-wrap:balance] mb-2"></h2>
-                <p class="overlay__description"></p>
+                <p class="overlay__description opacity-60"></p>
             </div>
             <span class="overlay__price text-3xl empty:hidden block border-t border-b pt-5 pb-5"></span>
             <div class="flex flex-col">
-                <span class="overlay__width text-sm tracking-wide leading-6 empty:hidden"></span>
-                <span class="overlay__height text-sm tracking-wide leading-6 empty:hidden"></span>
-                <span class="overlay__framed text-sm tracking-wide leading-6 empty:hidden"></span>
+                <span class="overlay__width text-sm empty:hidden opacity-60 leading-6"></span>
+                <span class="overlay__height text-sm empty:hidden opacity-60 leading-6"></span>
+                <span class="overlay__framed text-sm empty:hidden opacity-60 leading-6"></span>
             </div>
-            <hr>
             <button class="overlay__contact bg-gray-100 px-8 py-4 rounded-lg hover:bg-gray-900 hover:text-white ease-in-out duration-300 inline-block cursor-pointer text-center">Enquire</button>
         </div>
     </div>
