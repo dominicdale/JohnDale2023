@@ -1,8 +1,8 @@
-<section class="panel panel--overlay w-screen h-screen absolute bg-[#202024] -translate-x-full ease-in-out duration-1000 z-40 overflow-y-auto flex flex-col gap-6 overflow-x-hidden">
+<section class="panel panel--overlay w-screen h-[100dvh] absolute bg-[#202024] -translate-x-full ease-in-out duration-1000 z-40 overflow-y-auto flex flex-col gap-6 overflow-x-hidden">
     <button onclick="closeOverlay()" class="overlay__close fixed top-10 left-10 max-sm:top-5 max-sm:left-5 bg-white w-10 h-10 flex justify-center items-center z-10" aria-label="Close Overlay">
         <img src="icons/close.svg" alt="Close overlay" class="w-6" width="24" height="24" loading="lazy">
     </button>
-    <div class="flex gap-4 fixed top-10 right-[360px] max-sm:top-5 max-sm:right-5 z-10">
+    <div class="flex gap-4 fixed top-10 right-[360px] max-md:right-10 max-sm:top-5 max-sm:right-5 z-10">
         <button class="overlay__minus bg-white w-10 h-10 flex justify-center items-center max-md:hidden opacity-60 ease-in-out duration-300" target="_blank" aria-label="View image fullscreen">
             <img src="icons/minus.svg" alt="View image fullscreen" class="w-6" width="24" height="24" loading="lazy">
         </button>
@@ -14,8 +14,8 @@
         </a>
     </div>
     <div class="flex flex-1 max-md:flex-col">
-        <div class="relative flex-1 flex max-h-[100vh] overflow-auto items-center justify-center">
-            <img src="" class="overlay__img h-auto max-h-[90vh] object-cover ease-in-out duration-500 m-auto max-md:w-full flex-none opacity-0"  alt="" width="0" height="0"/>
+        <div class="relative md:flex-1 flex md:max-h-[100dvh] md:overflow-auto items-center justify-center">
+            <img src="" class="overlay__img h-auto md:max-h-[90vh] object-cover ease-in-out duration-500 m-auto max-md:w-full flex-none opacity-0"  alt="" width="0" height="0"/>
             <span class="overlay__load absolute w-12 h-12 rounded-full border-8 border-white border-r-transparent animate-spin -z-10"></span>
         </div>
         <div class="md:w-80 bg-white p-8 flex flex-col gap-5 justify-center">
