@@ -92,10 +92,12 @@
 
 .overlay__width:before {
     content: 'Width: ';
+    font-weight: 600;
 }
 
 .overlay__height:before {
     content: 'Height: ';
+    font-weight: 600;
 }
 
 .overlay__price:before {
