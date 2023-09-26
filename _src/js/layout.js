@@ -39,18 +39,20 @@ function closeContact() {
 function openOverlay() {
     galleryPanel.classList.add('scale-75')
     overlayPanel.classList.remove('-translate-x-full')
+    overlayPanel.classList.add('overlay--show')
 }
 
 function closeOverlay() {
     overlayPanel.classList.add('-translate-x-full')
-    galleryPanel.classList.remove('scale-75')
-    overlay.img.classList.remove('!w-full', 'md:max-h-[100vh]')
-    overlay.img.classList.add('opacity-0', 'md:max-h-[90vh]')
+    galleryPanel.classList.remove('scale-75', 'overlay--show')
+    overlay.img.classList.remove('!w-full')
+    overlay.img.classList.add('opacity-0', 'md:max-h-[100vh]', 'md:scale-90')
     overlay.img.style.width = ''
     overlay.price.innerText = ''
     overlay.height.innerText = ''
     overlay.width.innerText = ''
     overlay.load.classList.remove('opacity-0')
+    overlay.box.classList.add('translate-y-40', 'opacity-0')
     zoomLevel = 0
 }
 

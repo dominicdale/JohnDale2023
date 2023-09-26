@@ -16,7 +16,6 @@ window.addEventListener('load', () => {
   
 function loaded() {
     animate.forEach((item) => {
-        item.classList.remove('translate-y-8')
-        item.classList.remove('opacity-0')
+        item.classList.remove('translate-y-40', 'opacity-0', 'translate-y-8')
     })
 }

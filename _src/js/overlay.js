@@ -1,4 +1,5 @@
 const overlay = {
+    box: document.querySelector('.overlay__box'),
     img: document.querySelector('.overlay__img'),
     title: document.querySelector('.overlay__title'),
     description: document.querySelector('.overlay__description'),
@@ -59,6 +60,10 @@ function populateOverlay(e) {
         contact()
         overlay.contactMessage.innerHTML = `Enquiring about ${title}`
     })
+
+    setTimeout(() => {
+        overlay.box.classList.remove('translate-y-40', 'opacity-0')
+    }, 700)
 }
 
 
@@ -77,8 +82,8 @@ document.body.addEventListener('click', function (event) {
 
 function zoomIn() {
     zoomLevel = 1
-    overlay.img.classList.remove('md:max-h-[90vh]')
-    overlay.img.classList.add('md:max-h-[100vh]')
+    overlay.img.classList.remove('md:max-h-[100vh]', 'md:scale-90')
+
     overlay.img.classList.add('!w-full')
     overlay.img.style.cursor = 'zoom-out'
 }
@@ -86,7 +91,8 @@ function zoomIn() {
 function zoomOut() {
     zoomLevel = 0
     overlay.img.classList.remove('!w-full')
-    overlay.img.classList.remove('md:max-h-[100vh]')
-    overlay.img.classList.add('md:max-h-[90vh]')
+    overlay.img.classList.add('md:scale-90')
+    // overlay.img.classList.remove('md:max-h-[100vh]')
+    overlay.img.classList.add('md:max-h-[100vh]')
     overlay.img.style.cursor = 'zoom-in'
 }

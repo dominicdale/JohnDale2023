@@ -39,18 +39,20 @@ function closeContact() {
 function openOverlay() {
     galleryPanel.classList.add('scale-75')
     overlayPanel.classList.remove('-translate-x-full')
+    overlayPanel.classList.add('overlay--show')
 }
 
 function closeOverlay() {
     overlayPanel.classList.add('-translate-x-full')
-    galleryPanel.classList.remove('scale-75')
-    overlay.img.classList.remove('!w-full', 'md:max-h-[100vh]')
-    overlay.img.classList.add('opacity-0', 'md:max-h-[90vh]')
+    galleryPanel.classList.remove('scale-75', 'overlay--show')
+    overlay.img.classList.remove('!w-full')
+    overlay.img.classList.add('opacity-0', 'md:max-h-[100vh]', 'md:scale-90')
     overlay.img.style.width = ''
     overlay.price.innerText = ''
     overlay.height.innerText = ''
     overlay.width.innerText = ''
     overlay.load.classList.remove('opacity-0')
+    overlay.box.classList.add('translate-y-40', 'opacity-0')
     zoomLevel = 0
 }
 
@@ -168,6 +170,7 @@ function animateItems(e) {
     e.classList.add('grid__item--animate')
 }
 const overlay = {
+    box: document.querySelector('.overlay__box'),
     img: document.querySelector('.overlay__img'),
     title: document.querySelector('.overlay__title'),
     description: document.querySelector('.overlay__description'),
@@ -223,6 +226,9 @@ function populateOverlay(e) {
         contact()
         overlay.contactMessage.innerHTML = `Enquiring about ${title}`
     })
+    setTimeout(() => {
+        overlay.box.classList.remove('translate-y-40', 'opacity-0')
+    }, 700)
 }
 // Zoom
 let zoomLevel = 0
@@ -238,8 +244,7 @@ document.body.addEventListener('click', function(event) {
 
 function zoomIn() {
     zoomLevel = 1
-    overlay.img.classList.remove('md:max-h-[90vh]')
-    overlay.img.classList.add('md:max-h-[100vh]')
+    overlay.img.classList.remove('md:max-h-[100vh]', 'md:scale-90')
     overlay.img.classList.add('!w-full')
     overlay.img.style.cursor = 'zoom-out'
 }
@@ -247,8 +252,9 @@ function zoomIn() {
 function zoomOut() {
     zoomLevel = 0
     overlay.img.classList.remove('!w-full')
-    overlay.img.classList.remove('md:max-h-[100vh]')
-    overlay.img.classList.add('md:max-h-[90vh]')
+    overlay.img.classList.add('md:scale-90')
+    // overlay.img.classList.remove('md:max-h-[100vh]')
+    overlay.img.classList.add('md:max-h-[100vh]')
     overlay.img.style.cursor = 'zoom-in'
 }
 const loading = document.querySelector('.loading')
@@ -268,7 +274,6 @@ window.addEventListener('load', () => {
 
 function loaded() {
     animate.forEach((item) => {
-        item.classList.remove('translate-y-8')
-        item.classList.remove('opacity-0')
+        item.classList.remove('translate-y-40', 'opacity-0', 'translate-y-8')
     })
 }
