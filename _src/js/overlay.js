@@ -38,6 +38,9 @@ function populateOverlay(e) {
 
     if (price > 0) {
         overlay.price.innerText = price
+    } else {
+        overlay.price.classList.add('hidden')
+        overlay.contact.classList.add('hidden')
     }
     if (width > 0) {
         overlay.width.innerText = width + 'cm'

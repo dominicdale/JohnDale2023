@@ -53,6 +53,8 @@ function closeOverlay() {
     overlay.width.innerText = ''
     overlay.load.classList.remove('opacity-0')
     overlay.box.classList.add('translate-y-40', 'opacity-0')
+    overlay.price.classList.remove('hidden')
+    overlay.contact.classList.remove('hidden')
     zoomLevel = 0
 }
 
@@ -206,6 +208,9 @@ function populateOverlay(e) {
     overlay.open.setAttribute('href', img)
     if (price > 0) {
         overlay.price.innerText = price
+    } else {
+        overlay.price.classList.add('hidden')
+        overlay.contact.classList.add('hidden')
     }
     if (width > 0) {
         overlay.width.innerText = width + 'cm'
