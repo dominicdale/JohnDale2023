@@ -1,13 +1,13 @@
 <section class="panel panel--overlay w-screen h-[100dvh] absolute bg-[#202024] -translate-x-full ease-in-out duration-1000 z-40 overflow-y-auto flex flex-col gap-6 overflow-x-hidden">
-    <button onclick="closeOverlay()" class="overlay__close fixed top-10 left-10 max-sm:top-5 max-sm:left-5 bg-white w-10 h-10 flex justify-center items-center z-10" aria-label="Close Overlay">
+    <button onclick="closeOverlay()" class="overlay__close fixed top-10 left-10 max-sm:top-5 max-sm:left-5 bg-white w-10 h-10 flex justify-center items-center z-10 rounded-lg" aria-label="Close Overlay">
         <img src="icons/close.svg" alt="Close overlay" class="w-6" width="24" height="24" loading="lazy">
     </button>
     <div class="flex flex-1 max-md:flex-col">
         <div class="relative flex-1 flex md:max-h-[100dvh] md:overflow-auto items-center justify-center">
-            <img src="" class="overlay__img h-auto w-auto md:max-h-[100vh] object-cover ease-in-out duration-700 m-auto max-md:w-full flex-none opacity-0 cursor-zoom-in md:scale-90"  alt="" width="0" height="0"/>
+            <img src="" class="overlay__img h-auto w-auto md:max-h-[100vh] object-cover ease-in-out duration-700 delay-1000 m-auto max-md:w-full flex-none opacity-0 cursor-zoom-in md:scale-90"  alt="" width="0" height="0"/>
             <span class="overlay__load absolute w-12 h-12 rounded-full border-8 border-white border-r-transparent animate-spin -z-10"></span>
         </div>
-        <div class="overlay__box md:w-96 md:absolute md:bottom-10 md:right-10 bg-white p-8 flex flex-col gap-5 justify-center ease-in-out duration-700 translate-y-40 opacity-0">
+        <div class="overlay__box md:w-96 md:absolute md:bottom-10 md:right-10 bg-white p-8 flex flex-col gap-5 justify-center ease-in-out duration-700 translate-y-40 opacity-0 rounded-lg">
             <div>
                 <h2 class="text-3xl tracking-tight font-bold font-serif overlay__title [text-wrap:balance] mb-2"></h2>
                 <p class="overlay__description opacity-60 mb-1"></p>

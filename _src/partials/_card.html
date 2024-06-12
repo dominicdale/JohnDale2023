@@ -1,11 +1,11 @@
 <div class="grid__item inline-flex w-full mt-8 cursor-pointer" data-id="${props.id}" data-img="${props.img}" data-title="${props.title}" data-description="${props.description}" data-price="${props.price}" data-width="${props.width}" data-height="${props.height}" data-framed="${props.frame}">
-    <div class="card relative shadow-lg hover:shadow-2xl ease-in-out duration-700 w-full">
+    <div class="card relative shadow-lg hover:shadow-2xl ease-in-out duration-700 w-full rounded-lg overflow-hidden">
         <div class="card__wrapper relative bg-gray-200" style="--width: ${props.imgWidth}; --height: ${props.imgHeight};">
             <img alt="${props.title}" height="${props.imgHeight}" width="${props.imgWidth}" class="card__image block w-full h-full absolute inset-0 object-cover" loading="lazy" src="${props.imgCrop}">
         </div>
-        <div class="card__body p-8 bg-white flex flex-col gap-1">
+        <div class="card__body p-8 bg-white flex flex-col gap-3">
             <h2 class="card__title font-serif text-3xl [text-wrap:balance]">${props.title}</h2>
-            <p class="opacity-60 [text-wrap:balance] line-clamp-2">${props.description}</p>
+            <p class="opacity-60 [text-wrap:balance] line-clamp-2 text-sm">${props.description}</p>
         </div>
     </div>
 </div>
