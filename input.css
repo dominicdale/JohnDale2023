@@ -35,12 +35,12 @@
     }
 }
 
-.nav__link:not(.nav--open .nav__link) {
+.nav__box:not(.nav--open .nav__box) {
     opacity: 0;
     visibility: hidden;
 }
 
-.nav:after {
+/* .nav:after {
     content: '';
     position: absolute;
     top: 0;
@@ -56,7 +56,7 @@
 .nav--open:after {
     transform: scaleX(1);
     box-shadow: 0 0 2.5rem 0 rgba(0, 0, 0, .1);
-}
+} */
 
 .nav--open .nav__line--t {
     rotate: 45deg;
