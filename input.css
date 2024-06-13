@@ -89,21 +89,22 @@
 
 }
 
-.overlay__width:after {
-    content: ' x';
-}
 
 .overlay__price:before {
     content: '\00A3';
 }
 
-.overlay__height:after {
+.overlay__height:before {
+    content: 'x';
+}
+
+/* .overlay__height:after {
     content: '';
     border-left: 1px solid #000;
     position: absolute;
     right: -1rem;
     height: 0.625rem;
-}
+} */
 
 .card__wrapper {
     aspect-ratio: var(--width) / var(--height);

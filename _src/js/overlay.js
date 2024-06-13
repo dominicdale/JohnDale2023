@@ -6,7 +6,7 @@ const overlay = {
     price: document.querySelector('.overlay__price'),
     width: document.querySelector('.overlay__width'),
     height: document.querySelector('.overlay__height'),
-    framed: document.querySelector('.overlay__framed'),
+    // framed: document.querySelector('.overlay__framed'),
     contact: document.querySelector('.overlay__contact'),
     open: document.querySelector('.overlay__download'),
     close: document.querySelector('.overlay__close'),
@@ -33,7 +33,7 @@ function populateOverlay(e) {
     overlay.img.removeAttribute('height')
     overlay.title.innerText = title
     overlay.description.innerText = description
-    overlay.framed.innerText = framed
+    // overlay.framed.innerText = framed
     overlay.open.setAttribute('href', img)
 
     if (price > 0) {
@@ -42,12 +42,14 @@ function populateOverlay(e) {
         overlay.price.classList.add('hidden')
         overlay.contact.classList.add('hidden')
     }
-    if (width > 0) {
-        overlay.width.innerText = width + 'cm'
-    }
-    if (height > 0) {
-        overlay.height.innerText = height + 'cm'
-    }
+
+    // if (width != null && width > 0) {
+        overlay.width.innerText = width
+    // }
+
+    // if (height != null && height > 0) {
+        overlay.height.innerText = height
+    // }
 
     overlay.img.addEventListener('load', () => {
         imgWidth = overlay.img.offsetWidth
