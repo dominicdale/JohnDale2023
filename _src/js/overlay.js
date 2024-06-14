@@ -14,6 +14,7 @@ const overlay = {
     minus: document.querySelector('.overlay__minus'),
     plus: document.querySelector('.overlay__plus'),
     load: document.querySelector('.overlay__load'),
+    next: document.querySelector('.overlay__next')
 }
 
 function populateOverlay(e) {
@@ -58,7 +59,6 @@ function populateOverlay(e) {
         overlay.img.style.width = imgWidth + 'px'
         overlay.img.classList.remove('opacity-0')
         overlay.load.classList.add('opacity-0')
-        console.log(imgWidth)
     })
 
     overlay.contact.addEventListener('click', () => {
@@ -85,6 +85,11 @@ document.body.addEventListener('click', function (event) {
     }
 })
 
+// overlay.next.addEventListener('click', ()=> {
+
+//     console.log('hello')
+// })
+
 function zoomIn() {
     zoomLevel = 1
     overlay.img.classList.remove('md:max-h-[100vh]', 'md:scale-90')
@@ -93,7 +98,7 @@ function zoomIn() {
     overlay.img.style.cursor = 'zoom-out'
     overlay.img.classList.remove('delay-1000')
     overlay.img.classList.remove('rounded-lg')
-    overlay.box.classList.add('translate-x-[130%]')
+    overlay.box.classList.add('md:translate-x-[130%]')
 }
 
 function zoomOut() {
@@ -104,5 +109,5 @@ function zoomOut() {
     overlay.img.classList.add('md:max-h-[100vh]')
     overlay.img.style.cursor = 'zoom-in'
     overlay.img.classList.add('rounded-lg')
-    overlay.box.classList.remove('translate-x-[130%]')
+    overlay.box.classList.remove('md:translate-x-[130%]')
 }

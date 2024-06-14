@@ -6,15 +6,14 @@ function isNearTop(element, offset = 100) {
 
 // Function to handle the visibility of layout items
 function handleLayoutItems() {
-  var layoutItems = document.querySelectorAll('.section');
+  var layoutItems = document.querySelectorAll('.card');
   layoutItems.forEach(function(el) {
     if (isNearTop(el, 100)) {
-      el.classList.add('section--visible');
+      el.classList.remove('opacity-0', 'translate-y-8');
     }
   });
 }
 
 // Event listener for the scroll event
-window.addEventListener("scroll", handleLayoutItems);
+galleryPanel.addEventListener("scroll", handleLayoutItems);
 window.addEventListener("load", handleLayoutItems);
-

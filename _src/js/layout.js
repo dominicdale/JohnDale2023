@@ -45,17 +45,21 @@ function openOverlay() {
 function closeOverlay() {
     overlayPanel.classList.add('-translate-x-full')
     galleryPanel.classList.remove('scale-75', 'overlay--show')
-    overlay.img.classList.remove('!w-full')
-    overlay.img.classList.add('opacity-0', 'md:max-h-[100vh]', 'md:scale-90', 'rounded-lg', 'delay-1000')
-    overlay.img.style.width = ''
-    overlay.price.innerText = ''
-    overlay.height.innerText = ''
-    overlay.width.innerText = ''
+    
+    setTimeout(() => {
+        overlay.img.classList.remove('!w-full')
+        overlay.img.classList.add('opacity-0', 'md:max-h-[100vh]', 'md:scale-90', 'rounded-lg', 'delay-1000')
+        overlay.img.style.width = ''
+        overlay.price.innerText = ''
+        overlay.height.innerText = ''
+        overlay.width.innerText = ''
+    }, 500);
+  
     overlay.load.classList.remove('opacity-0')
     overlay.box.classList.add('translate-y-40', 'opacity-0')
     overlay.price.classList.remove('hidden')
     overlay.contact.classList.remove('hidden')
-    overlay.box.classList.remove('translate-x-[130%]')
+    overlay.box.classList.remove('md:translate-x-[130%]')
     zoomLevel = 0
 }
 

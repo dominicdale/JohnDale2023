@@ -45,17 +45,19 @@ function openOverlay() {
 function closeOverlay() {
     overlayPanel.classList.add('-translate-x-full')
     galleryPanel.classList.remove('scale-75', 'overlay--show')
-    overlay.img.classList.remove('!w-full')
-    overlay.img.classList.add('opacity-0', 'md:max-h-[100vh]', 'md:scale-90', 'rounded-lg', 'delay-1000')
-    overlay.img.style.width = ''
-    overlay.price.innerText = ''
-    overlay.height.innerText = ''
-    overlay.width.innerText = ''
+    setTimeout(() => {
+        overlay.img.classList.remove('!w-full')
+        overlay.img.classList.add('opacity-0', 'md:max-h-[100vh]', 'md:scale-90', 'rounded-lg', 'delay-1000')
+        overlay.img.style.width = ''
+        overlay.price.innerText = ''
+        overlay.height.innerText = ''
+        overlay.width.innerText = ''
+    }, 500);
     overlay.load.classList.remove('opacity-0')
     overlay.box.classList.add('translate-y-40', 'opacity-0')
     overlay.price.classList.remove('hidden')
     overlay.contact.classList.remove('hidden')
-    overlay.box.classList.remove('translate-x-[130%]')
+    overlay.box.classList.remove('md:translate-x-[130%]')
     zoomLevel = 0
 }
 
@@ -188,6 +190,7 @@ const overlay = {
     minus: document.querySelector('.overlay__minus'),
     plus: document.querySelector('.overlay__plus'),
     load: document.querySelector('.overlay__load'),
+    next: document.querySelector('.overlay__next')
 }
 
 function populateOverlay(e) {
@@ -226,7 +229,6 @@ function populateOverlay(e) {
         overlay.img.style.width = imgWidth + 'px'
         overlay.img.classList.remove('opacity-0')
         overlay.load.classList.add('opacity-0')
-        console.log(imgWidth)
     })
     overlay.contact.addEventListener('click', () => {
         contact()
@@ -247,7 +249,9 @@ document.body.addEventListener('click', function(event) {
         }
     }
 })
-
+// overlay.next.addEventListener('click', ()=> {
+//     console.log('hello')
+// })
 function zoomIn() {
     zoomLevel = 1
     overlay.img.classList.remove('md:max-h-[100vh]', 'md:scale-90')
@@ -255,7 +259,7 @@ function zoomIn() {
     overlay.img.style.cursor = 'zoom-out'
     overlay.img.classList.remove('delay-1000')
     overlay.img.classList.remove('rounded-lg')
-    overlay.box.classList.add('translate-x-[130%]')
+    overlay.box.classList.add('md:translate-x-[130%]')
 }
 
 function zoomOut() {
@@ -266,7 +270,7 @@ function zoomOut() {
     overlay.img.classList.add('md:max-h-[100vh]')
     overlay.img.style.cursor = 'zoom-in'
     overlay.img.classList.add('rounded-lg')
-    overlay.box.classList.remove('translate-x-[130%]')
+    overlay.box.classList.remove('md:translate-x-[130%]')
 }
 const loading = document.querySelector('.loading')
 const layout = document.querySelector('.layout')
@@ -288,3 +292,20 @@ function loaded() {
         item.classList.remove('translate-y-40', 'opacity-0', 'translate-y-8')
     })
 }
+// Function to check if an element is near the top of the viewport
+function isNearTop(element, offset = 100) {
+    var rect = element.getBoundingClientRect();
+    return rect.top <= (window.innerHeight || document.documentElement.clientHeight) - offset;
+}
+// Function to handle the visibility of layout items
+function handleLayoutItems() {
+    var layoutItems = document.querySelectorAll('.card');
+    layoutItems.forEach(function(el) {
+        if (isNearTop(el, 100)) {
+            el.classList.remove('opacity-0', 'translate-y-8');
+        }
+    });
+}
+// Event listener for the scroll event
+galleryPanel.addEventListener("scroll", handleLayoutItems);
+window.addEventListener("load", handleLayoutItems);
