@@ -96,6 +96,7 @@
 
 .overlay__height:before {
     content: 'x';
+    margin-right: 0.3125rem;
 }
 
 /* .overlay__height:after {

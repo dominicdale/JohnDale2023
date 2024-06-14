@@ -44,13 +44,8 @@ function populateOverlay(e) {
         overlay.contact.classList.add('hidden')
     }
 
-    // if (width != null && width > 0) {
-        overlay.width.innerText = width
-    // }
-
-    // if (height != null && height > 0) {
-        overlay.height.innerText = height
-    // }
+    overlay.width.innerText = width
+    overlay.height.innerText = height
 
     overlay.img.addEventListener('load', () => {
         imgWidth = overlay.img.offsetWidth
@@ -74,7 +69,6 @@ function populateOverlay(e) {
 
 // Zoom
 let zoomLevel = 0
-
 document.body.addEventListener('click', function (event) {
     if (overlay.img.contains(event.target)) {
         if (zoomLevel === 0) {
@@ -85,10 +79,17 @@ document.body.addEventListener('click', function (event) {
     }
 })
 
-// overlay.next.addEventListener('click', ()=> {
+overlay.next.addEventListener('click', () => {
+    let nextSibling = clickedElement.nextElementSibling;
 
-//     console.log('hello')
-// })
+    if (nextSibling) {
+        clickedElement = nextSibling;
+        populateOverlay(nextSibling)
+    } 
+    // else {
+    //     overlay.next.classList.add('hidden')
+    // }
+})
 
 function zoomIn() {
     zoomLevel = 1

@@ -130,6 +130,7 @@ function activeSlide(slide) {
 }
 const gallery_filter = document.querySelectorAll('.gallery__filter')
 const items = document.querySelectorAll('.grid__item')
+let clickedElement = null;
 gallery_filter.forEach((el) => {
     el.addEventListener('click', () => {
         const filter = el.getAttribute('data-filter')
@@ -157,9 +158,11 @@ gallery_filter.forEach((el) => {
     })
 })
 items.forEach((e) => {
-    e.addEventListener('click', () => {
+    e.addEventListener('click', (event) => {
         openOverlay()
         populateOverlay(e)
+        clickedElement = event.target.closest('.grid__item');
+        console.log('Clicked element:', clickedElement);
     })
 })
 
@@ -216,12 +219,8 @@ function populateOverlay(e) {
         overlay.price.classList.add('hidden')
         overlay.contact.classList.add('hidden')
     }
-    // if (width != null && width > 0) {
     overlay.width.innerText = width
-    // }
-    // if (height != null && height > 0) {
     overlay.height.innerText = height
-    // }
     overlay.img.addEventListener('load', () => {
         imgWidth = overlay.img.offsetWidth
         overlay.img.setAttribute('width', overlay.img.width)
@@ -249,9 +248,16 @@ document.body.addEventListener('click', function(event) {
         }
     }
 })
-// overlay.next.addEventListener('click', ()=> {
-//     console.log('hello')
-// })
+overlay.next.addEventListener('click', () => {
+    let nextSibling = clickedElement.nextElementSibling;
+    if (nextSibling) {
+        clickedElement = nextSibling;
+        populateOverlay(nextSibling)
+    } else {
+        overlay.next.classList.add('hidden')
+    }
+})
+
 function zoomIn() {
     zoomLevel = 1
     overlay.img.classList.remove('md:max-h-[100vh]', 'md:scale-90')

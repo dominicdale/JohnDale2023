@@ -1,5 +1,7 @@
 const gallery_filter = document.querySelectorAll('.gallery__filter')
 const items = document.querySelectorAll('.grid__item')
+let clickedElement = null;
+
 
 gallery_filter.forEach((el) => {
     el.addEventListener('click', () => {
@@ -32,10 +34,15 @@ gallery_filter.forEach((el) => {
     })
 })
 
+
+
 items.forEach((e) => {
-    e.addEventListener('click', () => {
+    e.addEventListener('click', (event) => {
         openOverlay()
         populateOverlay(e)
+
+        clickedElement = event.target.closest('.grid__item');
+        console.log('Clicked element:', clickedElement);
     })
 })
 
