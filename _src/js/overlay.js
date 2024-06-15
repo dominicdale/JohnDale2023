@@ -14,7 +14,8 @@ const overlay = {
     minus: document.querySelector('.overlay__minus'),
     plus: document.querySelector('.overlay__plus'),
     load: document.querySelector('.overlay__load'),
-    next: document.querySelector('.overlay__next')
+    next: document.querySelector('.overlay__next'),
+    prev: document.querySelector('.overlay__prev')
 }
 
 function populateOverlay(e) {
@@ -36,13 +37,15 @@ function populateOverlay(e) {
     overlay.description.innerText = description
     // overlay.framed.innerText = framed
     overlay.open.setAttribute('href', img)
+    overlay.price.innerText = price
 
-    if (price > 0) {
-        overlay.price.innerText = price
-    } else {
-        overlay.price.classList.add('hidden')
-        overlay.contact.classList.add('hidden')
-    }
+
+    // if (price > 0) {
+    //     overlay.price.innerText = price
+    // } else {
+    //     overlay.price.classList.add('hidden')
+    //     // overlay.contact.classList.add('hidden')
+    // }
 
     overlay.width.innerText = width
     overlay.height.innerText = height
@@ -79,17 +82,26 @@ document.body.addEventListener('click', function (event) {
     }
 })
 
-overlay.next.addEventListener('click', () => {
-    let nextSibling = clickedElement.nextElementSibling;
+const updateNavigationButtons = () => {
+    overlay.next.classList.toggle('cursor-not-allowed', !clickedElement.nextElementSibling);
+    overlay.next.classList.toggle('opacity-50', !clickedElement.nextElementSibling);
+    overlay.prev.classList.toggle('cursor-not-allowed', !clickedElement.previousElementSibling);
+    overlay.prev.classList.toggle('opacity-50', !clickedElement.previousElementSibling);
+};
 
-    if (nextSibling) {
-        clickedElement = nextSibling;
-        populateOverlay(nextSibling)
-    } 
-    // else {
-    //     overlay.next.classList.add('hidden')
-    // }
-})
+const navigateOverlay = (direction) => {
+    let sibling = direction === 'next' ? clickedElement.nextElementSibling : clickedElement.previousElementSibling;
+
+    if (sibling) {
+        clickedElement = sibling;
+        populateOverlay(sibling);
+        updateNavigationButtons();
+    }
+};
+
+overlay.next.addEventListener('click', () => navigateOverlay('next'));
+overlay.prev.addEventListener('click', () => navigateOverlay('prev'));
+
 
 function zoomIn() {
     zoomLevel = 1

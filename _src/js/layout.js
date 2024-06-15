@@ -58,7 +58,7 @@ function closeOverlay() {
     overlay.load.classList.remove('opacity-0')
     overlay.box.classList.add('translate-y-40', 'opacity-0')
     overlay.price.classList.remove('hidden')
-    overlay.contact.classList.remove('hidden')
+    // overlay.contact.classList.remove('hidden')
     overlay.box.classList.remove('md:translate-x-[130%]')
     zoomLevel = 0
 }

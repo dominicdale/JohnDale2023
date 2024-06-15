@@ -7,7 +7,7 @@
             <img src="" class="overlay__img h-auto w-auto md:max-h-[100vh] object-cover ease-in-out duration-1000 delay-1000 m-auto max-md:w-full flex-none opacity-0 cursor-zoom-in md:scale-90 md:rounded-lg md:shadow-2xl"  alt="" width="0" height="0"/>
             <span class="overlay__load absolute w-12 h-12 rounded-full border-8 border-white border-r-transparent animate-spin -z-10"></span>
         </div>
-        <div class="overlay__box md:shadow-2xl md:w-96 md:absolute md:bottom-10 md:right-10 bg-white p-8 flex flex-col gap-5 justify-center ease-in-out duration-700 translate-y-40 opacity-0 md:rounded-lg">
+        <div class="overlay__box md:shadow-2xl md:w-[27rem] md:absolute md:bottom-10 md:right-10 bg-white p-8 flex flex-col gap-5 justify-center ease-in-out duration-700 translate-y-40 opacity-0 md:rounded-lg">
             <div>
                 <h2 class="text-3xl tracking-tight font-bold font-serif overlay__title [text-wrap:balance] mb-2"></h2>
                 <p class="overlay__description opacity-60 mb-1"></p>
@@ -20,12 +20,20 @@
                 </div>
             </div>
             <span class="overlay__price text-3xl empty:hidden"></span>
-            <div class="flex gap-4 mt-3">
-                <button class="overlay__contact bg-gray-100 px-8 py-4 rounded-lg hover:bg-gray-900 hover:text-white ease-in-out duration-300 inline-block cursor-pointer text-center flex-1">Enquire</button>
+            <div class="flex gap-3 mt-3 flex-wrap">
+                <button class="overlay__prev bg-gray-100 w-14 h-14 flex justify-center items-center rounded-lg hover:bg-gray-900 hover:text-white ease-in-out duration-300 group" aria-label="Next slide">
+                    <img src="icons/chevron.svg" alt="Previous icon" class="w-6 group-hover:invert -scale-x-100" width="24" height="24" loading="lazy">
+                </button>
+                <button class="overlay__next bg-gray-100 w-14 h-14 flex justify-center items-center rounded-lg hover:bg-gray-900 hover:text-white ease-in-out duration-300 group" aria-label="Previous slide">
+                    <img src="icons/chevron.svg" alt="Next icon" class="w-6 group-hover:invert" width="24" height="24" loading="lazy">
+                </button>
+                <button class="overlay__contact bg-gray-100 px-8 py-4 rounded-lg hover:bg-gray-900 hover:text-white ease-in-out duration-300 inline-block cursor-pointer text-center flex-1 flex items-center justify-center gap-3 group">
+                    <img src="icons/mail.svg" alt="Mail icon" class="w-6 group-hover:invert" width="24" height="24" loading="lazy">
+                    Enquire
+                </button>
                 <a href="#" class="overlay__download bg-gray-100 w-14 h-14 flex justify-center items-center rounded-lg hover:bg-gray-900 hover:text-white ease-in-out duration-300 group" aria-label="Download image" download>
-                    <img src="icons/download.svg" alt="View image fullscreen" class="w-6 group-hover:invert" width="24" height="24" loading="lazy">
+                    <img src="icons/download.svg" alt="Download icon" class="w-6 group-hover:invert" width="24" height="24" loading="lazy">
                 </a>
-                <button class="overlay__next">Next</button>
             </div>
         </div>
     </div>

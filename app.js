@@ -56,7 +56,7 @@ function closeOverlay() {
     overlay.load.classList.remove('opacity-0')
     overlay.box.classList.add('translate-y-40', 'opacity-0')
     overlay.price.classList.remove('hidden')
-    overlay.contact.classList.remove('hidden')
+    // overlay.contact.classList.remove('hidden')
     overlay.box.classList.remove('md:translate-x-[130%]')
     zoomLevel = 0
 }
@@ -162,7 +162,7 @@ items.forEach((e) => {
         openOverlay()
         populateOverlay(e)
         clickedElement = event.target.closest('.grid__item');
-        console.log('Clicked element:', clickedElement);
+        updateNavigationButtons();
     })
 })
 
@@ -193,7 +193,8 @@ const overlay = {
     minus: document.querySelector('.overlay__minus'),
     plus: document.querySelector('.overlay__plus'),
     load: document.querySelector('.overlay__load'),
-    next: document.querySelector('.overlay__next')
+    next: document.querySelector('.overlay__next'),
+    prev: document.querySelector('.overlay__prev')
 }
 
 function populateOverlay(e) {
@@ -213,12 +214,13 @@ function populateOverlay(e) {
     overlay.description.innerText = description
     // overlay.framed.innerText = framed
     overlay.open.setAttribute('href', img)
-    if (price > 0) {
-        overlay.price.innerText = price
-    } else {
-        overlay.price.classList.add('hidden')
-        overlay.contact.classList.add('hidden')
-    }
+    overlay.price.innerText = price
+    // if (price > 0) {
+    //     overlay.price.innerText = price
+    // } else {
+    //     overlay.price.classList.add('hidden')
+    //     // overlay.contact.classList.add('hidden')
+    // }
     overlay.width.innerText = width
     overlay.height.innerText = height
     overlay.img.addEventListener('load', () => {
@@ -248,15 +250,22 @@ document.body.addEventListener('click', function(event) {
         }
     }
 })
-overlay.next.addEventListener('click', () => {
-    let nextSibling = clickedElement.nextElementSibling;
-    if (nextSibling) {
-        clickedElement = nextSibling;
-        populateOverlay(nextSibling)
-    } else {
-        overlay.next.classList.add('hidden')
+const updateNavigationButtons = () => {
+    overlay.next.classList.toggle('cursor-not-allowed', !clickedElement.nextElementSibling);
+    overlay.next.classList.toggle('opacity-50', !clickedElement.nextElementSibling);
+    overlay.prev.classList.toggle('cursor-not-allowed', !clickedElement.previousElementSibling);
+    overlay.prev.classList.toggle('opacity-50', !clickedElement.previousElementSibling);
+};
+const navigateOverlay = (direction) => {
+    let sibling = direction === 'next' ? clickedElement.nextElementSibling : clickedElement.previousElementSibling;
+    if (sibling) {
+        clickedElement = sibling;
+        populateOverlay(sibling);
+        updateNavigationButtons();
     }
-})
+};
+overlay.next.addEventListener('click', () => navigateOverlay('next'));
+overlay.prev.addEventListener('click', () => navigateOverlay('prev'));
 
 function zoomIn() {
     zoomLevel = 1

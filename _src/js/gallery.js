@@ -42,7 +42,7 @@ items.forEach((e) => {
         populateOverlay(e)
 
         clickedElement = event.target.closest('.grid__item');
-        console.log('Clicked element:', clickedElement);
+        updateNavigationButtons();
     })
 })
 

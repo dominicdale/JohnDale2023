@@ -209,7 +209,7 @@ data = [
     "data-img: Landscapes/Clyde Walkway",
     "data-title: Clyde Walkway",
     "data-description: Acrylic on canvas",
-    "data-price: 0",
+    
     "data-imgwidth: 2759",
     "data-imgheight: 3484",
     "data-framed: Not Framed",
@@ -260,7 +260,7 @@ data = [
     "data-img: Landscapes/Frosty Garden",
     "data-title: Frosty Garden",
     "data-description: Acrylic on canvas",
-    "data-price: -1",
+    
     "data-imgwidth: 2895",
     "data-imgheight: 3677",
     "data-width: 57",
@@ -271,7 +271,7 @@ data = [
     "data-img: Landscapes/Frosty Morning Clyde Valley",
     "data-title: Frosty Morning Clyde Valley",
     "data-description: Acrylic on Canvas",
-    "data-price: -1",
+    
     "data-imgwidth: 3736",
     "data-imgheight: 2780",
     "data-framed: Not Framed",
@@ -313,7 +313,7 @@ data = [
     "data-img: Landscapes/River Clyde Winter",
     "data-title: River Clyde Winter",
     "data-description: Acrylic on Canvas",
-    "data-price: -1",
+    
     "data-imgwidth: 2970",
     "data-imgheight: 3721",
     "data-framed: Framed",
@@ -322,7 +322,7 @@ data = [
     "data-img: Landscapes/River Clyde",
     "data-title: River Clyde",
     "data-description: Acrylic on board",
-    "data-price: -1",
+    
     "data-imgwidth: 2796",
     "data-imgheight: 4111",
     "data-framed: Not Framed",
@@ -350,7 +350,7 @@ data = [
     "data-img: Landscapes/The Red Boat",
     "data-title: The Red Boat",
     "data-description: Acrylic on Board",
-    "data-price: 0",
+    
     "data-imgwidth: 1885",
     "data-imgheight: 1400",
     "Group: Winter River Clyde",
@@ -446,7 +446,7 @@ data = [
     "data-img: Lockdown/Tree",
     "data-title: Tree",
     "data-description: Oil pastel on paper",
-    "data-price: 0",
+    
     "data-imgwidth: 834",
     "data-imgheight: 1486",
     "data-framed: Not Framed",
@@ -524,7 +524,7 @@ data = [
     "data-img: Oil Pastels/Self portrait",
     "data-title: Self Portrait",
     "data-description: Oil pastel on black sugar paper",
-    "data-price: -1",
+    
     "data-imgwidth: 1080",
     "data-imgheight: 1491",
     "data-framed: Not Framed",
@@ -721,7 +721,7 @@ data = [
     "data-img: Still Life/Blue 2",
     "data-title: Blue 2",
     "data-description: Acrylic on canvas",
-    "data-price: -1",
+    
     "data-imgwidth: 1198",
     "data-imgheight: 1293",
     "data-framed: Not Framed",
@@ -752,7 +752,7 @@ data = [
     "data-img: Still Life/Dutch Still Life",
     "data-title: Dutch Still Life",
     "data-description: Acrylic on canvas",
-    "data-price: -1",
+    
     "data-imgwidth: 2965",
     "data-imgheight: 3951",
     "data-framed: Framed",
@@ -973,7 +973,7 @@ data = [
     "data-img: Venice/View from Hotel",
     "data-title: View From Hotel",
     "data-description: Watercolour",
-    "data-price: 0",
+    
     "data-imgwidth: 2974",
     "data-imgheight: 4033",
     "data-framed: Not Framed",
